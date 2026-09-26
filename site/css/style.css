@@ -247,6 +247,16 @@ cite {
 	font-weight: 700;
 	background: rgba(8, 12, 34, 0.72);
 }
+.study {
+	max-width: 1000px;
+	margin: 1.4em auto 1.2em;
+}
+.study .based {
+	margin-top: 0;
+}
+.study .actions {
+	margin-bottom: 0;
+}
 .based {
 	max-width: 46em;
 	margin: 1.4em auto 1.2em;
@@ -354,25 +364,55 @@ cite {
 }
 
 .film-bar {
+	max-width: 1000px;
+	margin: 12px auto 0;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	gap: 10px 20px;
-	margin-top: 14px;
-}
-.film-bar .btn[hidden] {
-	display: none;
-}
-.film-follow {
-	margin: 0;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 6px 24px;
 	color: var(--dim);
 	font-size: 0.92em;
-	text-wrap: balance;
+	text-align: left;
 }
-.film-follow a {
+.film-bar .transcript {
+	margin: 0;
+	max-width: none;
+}
+.film-bar .transcript[open] {
+	flex-basis: 100%;
+}
+.film-bar .transcript summary {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+}
+.film-links {
+	margin: 0;
+}
+.film-links a,
+.film-links button {
 	color: var(--text);
 	font-weight: 700;
+}
+.film-links button {
+	padding: 0;
+	border: 0;
+	background: none;
+	font: inherit;
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+	cursor: pointer;
+}
+.film-links .share[hidden] {
+	display: none;
+}
+@media (max-width: 560px) {
+	.film-bar {
+		justify-content: center;
+		text-align: center;
+	}
 }
 
 /* ─── bands ─── */
@@ -482,6 +522,46 @@ cite {
 	border-radius: 22px;
 	background: linear-gradient(180deg, #080c24, #111842);
 	border: 1px solid var(--card-line);
+	position: relative;
+}
+.demo .fs {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	z-index: 1;
+	min-height: 36px;
+	padding: 0 9px;
+}
+.demo .fs[hidden] {
+	display: none;
+}
+.demo .fs .exit,
+.demo .fs.on .enter {
+	display: none;
+}
+.demo .fs.on .exit {
+	display: inline;
+}
+/* full screen: the balance as large as the height allows, the sliders below it */
+.demo:fullscreen {
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	padding: 24px clamp(16px, 4vw, 64px);
+}
+.demo:fullscreen > svg {
+	width: min(100%, calc((100vh - 210px) * 1000 / 572));
+	margin: auto auto 0;
+}
+.demo:fullscreen .controls {
+	width: min(100%, 1100px);
+	margin: 0 auto auto;
+}
+.demo:fullscreen figcaption {
+	display: none;
 }
 .demo svg {
 	display: block;
@@ -528,6 +608,13 @@ cite {
 	font-size: 0.9em;
 	font-weight: 700;
 	color: var(--dim);
+}
+.controls .ends {
+	display: flex;
+	justify-content: space-between;
+	margin-top: -4px;
+	font-size: 0.82em;
+	font-weight: 600;
 }
 @media (max-width: 760px) {
 	.controls {

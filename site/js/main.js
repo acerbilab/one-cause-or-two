@@ -574,7 +574,7 @@ function setupShare() {
 	const data = {title: 'One cause or two?', text: 'A short film about how the brain decides whether a sight and a sound go together.', url};
 	const label0 = btn.textContent;
 	let timer = 0;
-	btn.hidden = false;
+	btn.parentElement.hidden = false;
 	btn.addEventListener('click', async () => {
 		if (navigator.share) {
 			try {
@@ -595,8 +595,29 @@ function setupShare() {
 	});
 }
 
+// ─── Full screen for the demo ───────────────────────────────────────────────────
+
+function setupFullscreen() {
+	const fig = document.querySelector('figure.demo');
+	const btn = document.getElementById('demo-fs');
+	if (!fig || !btn || !document.fullscreenEnabled) return; // e.g. iPhones: fullscreen is for video only
+	btn.hidden = false;
+	btn.addEventListener('click', () => {
+		if (document.fullscreenElement) document.exitFullscreen();
+		else fig.requestFullscreen().catch(() => {});
+	});
+	document.addEventListener('fullscreenchange', () => {
+		const on = document.fullscreenElement === fig;
+		const text = on ? 'Exit full screen' : 'Full screen';
+		btn.setAttribute('aria-label', text);
+		btn.title = text;
+		btn.classList.toggle('on', on);
+	});
+}
+
 setupDemo();
 setupFigures();
 setupTranscript();
 setupCopy();
 setupShare();
+setupFullscreen();
