@@ -285,8 +285,12 @@ export const S8End: React.FC<SceneProps> = ({standalone}) => {
 						<text x={960} y={770} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={64} fill={C.belief}>
 							acerbilab.github.io/one-cause-or-two
 						</text>
-						<text x={960} y={910} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim}>
-							University of Helsinki · New York University · Research Council of Finland · ELLIS Institute Finland
+						{/* the institutions: the senior authors' first, where the study was led; then funding and research environment */}
+						<text x={960} y={890} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim}>
+							University of Helsinki · New York University · Harvard University
+						</text>
+						<text x={960} y={940} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim}>
+							Research Council of Finland · ELLIS Institute Finland
 						</text>
 					</g>
 				</g>
