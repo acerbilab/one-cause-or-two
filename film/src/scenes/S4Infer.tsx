@@ -34,6 +34,13 @@ export const soundU = (f: number) => {
 
 export const tiltFor = (p1: number) => -(p1 - 0.5) * 2 * 11;
 
+/** Footnote to the title's asterisk: the term as perception science uses it. */
+export const ScopeNote: React.FC<{opacity: number}> = ({opacity}) => (
+	<text x={1860} y={76} textAnchor="end" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim} opacity={opacity}>
+		*in perception
+	</text>
+);
+
 /** "Hedge your bets": the merged and the separate answer under your guess, as faint dashed bumps. */
 export const Bets: React.FC<{ci: ReturnType<typeof causalInference>; opacity: number; labels: number; id: string}> = ({ci, opacity, labels, id}) => (
 	<g>
@@ -118,7 +125,8 @@ export const S4Infer: React.FC<SceneProps> = ({standalone}) => {
 				</g>
 			)}
 
-			<Title f={f} start={i2.start + 2} text="causal inference" y={112} size={76} />
+			<Title f={f} start={i2.start + 2} text="causal inference*" y={112} size={76} />
+			<ScopeNote opacity={ease(f, i2.start + 22, i2.start + 34)} />
 			<g opacity={ease(f, i3.start + 12, i3.start + 22)}>
 				<text x={960} y={172} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={36} fill={C.prior}>
 					the Bayesian brain: weigh the odds

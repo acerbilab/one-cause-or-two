@@ -9,7 +9,7 @@ import {cues} from '../lib/timeline';
 import {ease, lerp, spr} from '../lib/anim';
 import {causalInference, gauss} from '../lib/math';
 import {C, FONT, MATH} from '../theme';
-import {Bets, INFER_BASE, INFER_YS, OBS, tiltFor, U_MID} from './S4Infer';
+import {Bets, INFER_BASE, INFER_YS, OBS, ScopeNote, tiltFor, U_MID} from './S4Infer';
 
 const T = cues('ingredients');
 
@@ -81,8 +81,9 @@ export const S5Ingredients: React.FC<SceneProps> = ({standalone}) => {
 				{f < 14 && <Bets ci={ci} opacity={1 - ease(f, 0, 14)} labels={1 - ease(f, 0, 10)} id="s5" />}
 				<g opacity={1 - ease(f, 0, 14)}>
 					<text x={960} y={112} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={76} fill={C.text} letterSpacing={2}>
-						causal inference
+						causal inference*
 					</text>
+					<ScopeNote opacity={1} />
 					<text x={960} y={172} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={36} fill={C.prior}>
 						the Bayesian brain: weigh the odds
 					</text>

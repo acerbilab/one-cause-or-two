@@ -107,7 +107,7 @@ the two (the precision-weighted average).
 | Line | Narration | Picture |
 |---|---|---|
 | i1 | So before merging, the brain must ask: one cause, or two? | The meadow dissolves into a dark diagram space as a balance assembles. The ghost fox floats up and becomes solid in the *one cause* pan; the bird flies from its bush to the *two causes* pan. |
-| i2 | It's called causal inference. | Title typesets: **causal inference**. |
+| i2 | It's called causal inference. | Title typesets: **causal inference\***, with a small footnote in the top-right corner, *\*in perception*, so that readers from statistics and machine learning, where the term means estimating causal effects, know which kind is meant. |
 | i3 | A leading theory, the Bayesian brain, says we weigh the odds. | Subtitle: *the Bayesian brain: weigh the odds*. The beam wobbles. Small mono easter egg: Bayes' rule for the one-cause hypothesis. |
 | i4 | Close together? Probably one cause: merge. | Hills below: sight at the centre, sound close by. The scale tips to *one cause* (85%); the amber *your guess* is one merged bump. |
 | i5 | Far apart? Probably two: keep them separate. | The sound slides far away: *two causes* (98%); the guess stays with the sound. |
