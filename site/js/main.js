@@ -574,7 +574,7 @@ function setupShare() {
 	const data = {title: 'One cause or two?', text: 'A short film about how the brain decides whether a sight and a sound go together.', url};
 	const label0 = btn.textContent;
 	let timer = 0;
-	btn.parentElement.hidden = false;
+	btn.hidden = false;
 	btn.addEventListener('click', async () => {
 		if (navigator.share) {
 			try {

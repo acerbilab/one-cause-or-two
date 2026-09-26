@@ -353,13 +353,26 @@ cite {
 	margin-bottom: 0;
 }
 
-.film-share {
+.film-bar {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
+	gap: 10px 20px;
 	margin-top: 14px;
 }
-.film-share[hidden] {
+.film-bar .btn[hidden] {
 	display: none;
+}
+.film-follow {
+	margin: 0;
+	color: var(--dim);
+	font-size: 0.92em;
+	text-wrap: balance;
+}
+.film-follow a {
+	color: var(--text);
+	font-weight: 700;
 }
 
 /* ─── bands ─── */
