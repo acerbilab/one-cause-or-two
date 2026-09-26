@@ -271,6 +271,13 @@ cite {
 .based a {
 	color: var(--text);
 }
+.based a.person {
+	text-decoration: none;
+}
+.based a.person:hover,
+.based a.person:focus-visible {
+	text-decoration: underline;
+}
 .based sup {
 	line-height: 0;
 	font-weight: 800;
