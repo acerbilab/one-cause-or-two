@@ -56,18 +56,13 @@ e1014251, transcribed in [acerbilab/pubs-llms](https://github.com/acerbilab/pubs
 
   The score and sound effects are synthesized in code, so it is worth judging whether
   they sound good.
-- **"A rustle in the bushes"** (c2): the Kokoro voice tends to pronounce "rustle" close
-  to "wrestle". The take used is the one of eight that Whisper heard as
-  "rustle/Russell", and it is locked with `"keep": true` in `narration.json`.
 - **Upload limits:** check each platform's current limits for length and format. The film
-  is 2:21.8, in 16:9; vertical platforms (Reels, TikTok, Shorts) would need a 9:16
+  is 2:31.7, in 16:9; vertical platforms (Reels, TikTok, Shorts) would need a 9:16
   re-layout.
-- **Voice:** `af_heart` (Kokoro, Apache-2.0). Samples of other voices are in
-  `out/voice-samples/`. To switch voices:
-  1. Change `"voice"` in `narration.json`.
-  2. Re-run `tts/make_voice.py` and `tts/verify_voice.py`.
-  3. Re-take c2 if needed.
-
-  The film re-times itself.
+- **Voice:** "Helen", a professional voice from the ElevenLabs Voice Library, voiced
+  with `eleven_multilingual_v2`, one take per scene. To switch voices, change
+  `"elevenlabs"` in `narration.json`, delete `tts/takes/<voice>/` or name the scenes with
+  `--only`, then re-run `tts/make_voice.py` and `tts/verify_voice.py`. The film re-times
+  itself.
 - **Music:** put a track at `public/music.mp3` to replace the synthesized score. It is
   ducked under the narration automatically.

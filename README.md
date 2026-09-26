@@ -29,9 +29,10 @@ caveats in the paper.
   combine as Gaussians, and the causal-inference diagrams run the Bayesian observer of
   Körding et al. (2007), with parameters chosen for display.
   [`film/STORYBOARD.md`](film/STORYBOARD.md) describes the film scene by scene.
-- **Narration.** Text-to-speech with [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M),
-  run locally. Every line is transcribed back with Whisper to catch dropped or garbled
-  words.
+- **Narration.** Text-to-speech with [ElevenLabs](https://elevenlabs.io), one continuous
+  take per scene, cut into lines at the pauses; the TV anchor's line comes from
+  [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), run locally. Every line is
+  transcribed back with Whisper to catch dropped or garbled words.
 - **Sound.** The effects, the ambience and the score are synthesized with NumPy.
 - **Timing.** The narration sets the timing: each scene animates relative to its spoken
   lines, so rewording a line re-times the film.
@@ -43,6 +44,8 @@ caveats in the paper.
 - **Code** (everything that generates the film, the page and the notebook): [MIT](LICENSE).
 - **The film** (the rendered video, its narration and sound, and the images made from it):
   [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- **The narration** was generated with ElevenLabs and is also subject to the
+  [ElevenLabs terms](https://elevenlabs.io/terms-of-use).
 - **Fonts** in `site/fonts/`: SIL Open Font License, with each font's licence alongside.
 - Rebuilding the film uses [Remotion](https://www.remotion.dev), which has its own licence:
   free for individuals, non-profits and small companies, while larger companies need a paid

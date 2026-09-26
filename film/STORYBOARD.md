@@ -8,8 +8,8 @@ inference* (Liu, Holland, Ma & Acerbi, PLOS Computational Biology, 2026).
 No prior knowledge of statistics or neuroscience is assumed; every idea is carried by a
 picture first and by words second.
 
-**Format.** 1920×1080, 30 fps, 141.8 s.
-Narration by a local text-to-speech voice (Kokoro, `af_heart`). Burned-in captions in
+**Format.** 1920×1080, 30 fps, 151.7 s.
+Narration by ElevenLabs text-to-speech (the voice "Helen"), one take per scene. Burned-in captions in
 the main render (most feeds autoplay muted), a clean render without captions, and an
 `.srt` file.
 
@@ -75,7 +75,7 @@ marmot stands sentinel on the boulder, nibbling a flower. Crickets.
 | c4 | Get it wrong, and you're dinner. | Bubbles pop. Two large eyes glint in the dark grass for about 2 s. A gulp, a bead of sweat. |
 | c5 | Your brain solves this puzzle all day long. | A constant-rate dive into her pupil until it fills the frame. |
 
-### 2. Noisy senses — 0:11–0:30
+### 2. Noisy senses — 0:11–0:31
 
 Her point of view over the night meadow, opening like an eye. A thin ground line fades
 in with a tick at the centre labelled *straight ahead*.
@@ -92,7 +92,7 @@ in with a tick at the centre labelled *straight ahead*.
 The dot heaps are exact Gaussian quantiles and the amber hill is the exact product of
 the two (the precision-weighted average).
 
-### 3. Merging, and the catch — 0:30–0:45
+### 3. Merging, and the catch — 0:31–0:47
 
 | Line | Narration | Picture |
 |---|---|---|
@@ -102,7 +102,7 @@ the two (the precision-weighted average).
 | k3 | But what if the flicker was just the wind, and the rustle, a bird? | Static back to the meadow, and the camera pushes into the TV. A gust bends the grass where the flicker was (*wind*); a bird hops onto the bush and chirps (*bird*). |
 | k4 | Merge them, and you'd dodge a fox that isn't there. | The amber hill still stands between them; the other hills dim and a dashed ghost fox with a question mark appears above the amber peak. |
 
-### 4. Causal inference — 0:45–1:05
+### 4. Causal inference — 0:47–1:10
 
 | Line | Narration | Picture |
 |---|---|---|
@@ -118,7 +118,7 @@ Bayesian causal-inference observer (Körding et al., 2007): the amber curve is t
 posterior over where the sound came from, a mixture of the "one cause" and "two
 causes" answers weighted by their probabilities.
 
-### 5. Two ingredients — 1:05–1:25
+### 5. Two ingredients — 1:10–1:32
 
 | Line | Narration | Picture |
 |---|---|---|
@@ -128,7 +128,7 @@ causes" answers weighted by their probabilities.
 | g4 | Scientists often assume equal blur everywhere, and a plain bell curve. | The hills snap to one width, then the prior to a bell curve; a rubber stamp slams down on each: **ASSUMED**, **ASSUMED**. |
 | g5 | Convenient for the math. But is it true? | The two formulas appear (σ(s) = σ₀, p(s) = N(0, σ²)); a question mark pops on top of the bell curve; the stamps shake. |
 
-### 6. The experiment — 1:25–1:38
+### 6. The experiment — 1:32–1:47
 
 | Line | Narration | Picture |
 |---|---|---|
@@ -137,7 +137,7 @@ causes" answers weighted by their probabilities.
 | e3 | Where was it? Same place, or not? | The thin cursor with arrowheads slides from where it was left to the flash and clicks; *Same place? Yes / No*: the two rings are visibly apart, *No*. |
 | e4 | Fifteen volunteers. Nearly forty-five thousand answers. | The room shrinks into one of fifteen tiles, each running its own trials. *15 volunteers* and a counter to *44,600 answers*; the answers stream down as dots. |
 
-### 7. Let the data draw — 1:38–2:00
+### 7. Let the data draw — 1:47–2:09
 
 | Line | Narration | Picture |
 |---|---|---|
@@ -149,7 +149,7 @@ causes" answers weighted by their probabilities.
 The pins sit at the study's pivot locations (0°, 0.1°, 0.3°, 1°, 2°, 4°, 6°, 8°, 10°,
 15°, 20°, mirrored; the 45° pivot lies outside the picture).
 
-### 8. Resolution — 2:00–2:22
+### 8. Resolution — 2:09–2:32
 
 | Line | Narration | Picture |
 |---|---|---|

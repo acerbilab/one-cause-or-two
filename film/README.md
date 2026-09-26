@@ -6,7 +6,8 @@ inference* (Liu, Holland, Ma & Acerbi, PLOS Computational Biology, 2026). Everyt
 generated in code:
 
 - the pictures are SVG, animated with [Remotion](https://www.remotion.dev);
-- the narration comes from a local text-to-speech model ([Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), Apache-2.0);
+- the narration comes from [ElevenLabs](https://elevenlabs.io) text-to-speech, and the TV
+  anchor's line from a local model ([Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), Apache-2.0);
 - the sound effects and the score are synthesized with NumPy.
 
 - `STORYBOARD.md` — the film scene by scene: narration, pictures, transitions.
@@ -52,8 +53,9 @@ npm run render:clean
 
 `narration.json` is the single source of truth for the words and their timing. Each
 scene lasts `lead + Σ(gap + spoken line) + tail`, so editing a line or changing the
-voice re-times the whole film. A line marked `"keep": true` is a hand-picked take and is
-only regenerated when named with `--only`.
+voice re-times the whole film. With the ElevenLabs engine, each scene is one take, saved
+in `tts/takes/` and reused while its text is unchanged; `--only <scene>` takes it again.
+It needs an ElevenLabs API key in `ELEVENLABS_API_KEY` or `~/.config/elevenlabs/api_key`.
 
 `npm run studio` opens Remotion Studio for scrubbing through the film. Each scene is also
 its own composition (`S1-cold` … `S8-end`) with captions, for previews and stills.

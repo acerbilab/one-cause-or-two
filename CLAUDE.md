@@ -14,7 +14,8 @@ transcription of the paper is in
 Everything in the film is generated in code:
 
 - the pictures are SVG, animated with [Remotion](https://www.remotion.dev);
-- the narration comes from local text-to-speech (Kokoro);
+- the narration comes from ElevenLabs text-to-speech (the voice "Helen"), and the TV
+  anchor's line from local text-to-speech (Kokoro);
 - the sound effects and the score are synthesized with NumPy.
 
 `PLAN.md`, when present, holds the current plan and status. It is kept out of git. Read it
@@ -47,7 +48,8 @@ python -m venv tts/.venv
 tts/.venv/Scripts/python -m pip install "kokoro>=0.9.4" soundfile faster-whisper scipy pillow
 
 tts/.venv/Scripts/python tts/make_voice.py              # narration -> public/voice, src/generated/timeline.json, out/film.srt + .vtt
-tts/.venv/Scripts/python tts/make_voice.py --only c2    # re-voice one line (--timeline-only: re-time from existing clips)
+tts/.venv/Scripts/python tts/make_voice.py --only blur  # re-take a scene (or the scene of a line id); --timeline-only: re-time from existing clips
+tts/.venv/Scripts/python tts/eleven.py voices --type non-default   # ElevenLabs helpers: models, voices, auditions (see its docstring)
 tts/.venv/Scripts/python tts/verify_voice.py            # transcribe every clip back with Whisper
 tts/.venv/Scripts/python tts/make_audio.py              # all sound; --only score (etc.) for one file
 npx tsc --noEmit
@@ -71,16 +73,24 @@ Compositions: `Film` (the whole film; props `captions`, `music`), and `S1-cold` 
     boundaries.
   - The film runs about 2:20, a length that suits social media. It is a target, not a
     hard limit.
-- **Text-to-speech needs checking.**
-  - Kokoro is not deterministic, and it mispronounces some words. Two cases so far:
-    - Whisper heard "rustle" as "wrestle". Phoneme overrides such as
-      `[rustle](/ɹˈʌsəl/)` did not help; the line became "A rustle in the bushes", with a
-      hand-picked take.
-    - Whisper heard "Hedge your bets" as "head your bets". "You hedge your bets" works.
-  - Every re-voiced line must pass `verify_voice.py`.
-  - A line marked `"keep": true` in `narration.json` is a hand-picked take. `make_voice.py`
-    regenerates it only when it is named with `--only`, or when its clip is missing. In
-    either case, re-run `--only <id>` until `verify_voice.py` passes.
+- **The narration is voiced one scene at a time** (`"engine": "elevenlabs"` in
+  `narration.json`, with the voice and its settings).
+  - Each scene is one ElevenLabs take, conditioned on the previous take's audio. Each line
+    is cut out of the take at the quietest point of the pauses around it, and the scene is
+    levelled as a whole, so the delivery flows from line to line.
+  - Takes are saved in `tts/takes/<voice>/` with their character timings, and reused while
+    a scene's text is unchanged. `--only` re-takes a scene with a new seed; that costs
+    credits.
+  - The API key is read from `ELEVENLABS_API_KEY` or `~/.config/elevenlabs/api_key`, and
+    is never printed or committed.
+  - Use only models that ElevenLabs does not flag as alpha, beta or preview: the paid
+    plan's commercial licence excludes them. The voice is a professional clone trained on
+    `eleven_multilingual_v2`.
+  - With `"engine": "kokoro"`, lines are voiced one by one with Kokoro, and a line marked
+    `"keep": true` is a hand-picked take that is regenerated only when named with `--only`.
+- **Text-to-speech needs checking.** Run `verify_voice.py` after re-voicing. It transcribes
+  each line on its own, so Whisper mishears some short lines that are fine in context
+  ("Ears" as "is", "hedge" as "head"); if in doubt, transcribe the uncut scene take.
 - **The audio in `film/public/` is generated.**
   - Without it (for example in a fresh clone), run `make_voice.py`, `verify_voice.py` and
     `make_audio.py` before rendering. Renders skip missing sounds silently.
@@ -166,7 +176,7 @@ up to 20 parameters, and CMA-ES the 40-parameter semiparametric fits.
   `select` filters. To pull frames from a render, use PyAV (installed in the venv with
   faster-whisper) together with Pillow.
 - The Python scripts set `HF_HOME` to `tts/models`, where the Kokoro and Whisper weights
-  are cached.
+  are cached. `tts/eleven.py` uses only the standard library for its API calls.
 - **`make_audio.py` is regenerable, but not bit-identically.**
   - All its jobs draw from one seeded random generator, so running a subset with `--only`
     gives different random details than a full run.
