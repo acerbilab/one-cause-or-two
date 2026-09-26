@@ -2,6 +2,8 @@
   "voice": "af_heart",
   "speed": 1.0,
   "fps": 30,
+  "engine": "elevenlabs",
+  "elevenlabs": { "voice_name": "Helen", "voice_id": "ImnfuV8oxhB7ya99oJfc", "model": "eleven_multilingual_v2", "stability": 0.5, "similarity": 0.75, "style": 0.0, "speed": 0.95, "seed": 200 },
   "scenes": [
     {
       "id": "cold",

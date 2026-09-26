@@ -1,4 +1,7 @@
-"""Generate the narration with Kokoro TTS and derive the film timeline from it.
+"""Generate the narration and derive the film timeline from it.
+
+The engine is set in narration.json: "elevenlabs" voices one take per scene and cuts the
+lines out of it (see eleven_clips and tts/eleven.py); "kokoro" voices each line locally.
 
 Reads ../narration.json and writes:
   public/voice/<line_id>.wav    one 48 kHz mono clip per narration line
@@ -10,7 +13,8 @@ Scene durations are derived from the spoken audio: each scene lasts
 lead + sum(gap + line duration) + tail, so re-voicing the script (another
 voice, another speed, edited lines) re-times the whole film automatically.
 
-Usage:  python tts/make_voice.py [--only c1,c2] [--voice af_heart] [--speed 1.0]
+Usage:  python tts/make_voice.py [--only blur,c4] [--timeline-only]
+        (--voice and --speed apply to the kokoro engine)
 """
 
 import argparse
@@ -76,6 +80,49 @@ def synthesize(pipeline, text: str, voice: str, speed: float) -> np.ndarray:
     return np.concatenate(chunks)
 
 
+def eleven_clips(spec, only):
+    """ElevenLabs narration: one take per scene, each line cut out inside the pauses and
+    levelled with its scene (see tts/eleven.py). Takes are saved in tts/takes/<voice>/ and
+    reused while a scene's text is unchanged; a scene named in `only` (by its id or by one
+    of its line ids) is taken again with a new seed. Returns {line id: samples at SR_OUT}."""
+    import time
+
+    from eleven import scene_gain, scene_take, scene_text, split_scene
+
+    cfg = spec["elevenlabs"]
+    take_dir = ROOT / "tts" / "takes" / cfg["voice_name"].lower()
+    take_dir.mkdir(parents=True, exist_ok=True)
+    settings = {"stability": cfg["stability"], "similarity_boost": cfg["similarity"], "style": cfg["style"],
+                "use_speaker_boost": True, "speed": cfg["speed"]}
+    scenes = spec["scenes"]
+    clips, prev = {}, None
+    for k, scene in enumerate(scenes):
+        text, spans = scene_text([l["text"] for l in scene["lines"]])
+        meta_path, wav_path = take_dir / f"{scene['id']}.json", take_dir / f"{scene['id']}.wav"
+        meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else None
+        named = scene["id"] in only or any(l["id"] in only for l in scene["lines"])
+        if meta is None or meta["text"] != text or not wav_path.exists() or named:
+            seed = cfg["seed"] + k if meta is None else meta["seed"] + 1000 * named
+            # the previous take's request id conditions on its audio, but only for 2 h
+            fresh = prev is not None and prev.get("request_id") and time.time() - prev["created"] < 7000
+            nxt = scenes[k + 1]["lines"][0]["text"] if k + 1 < len(scenes) else None
+            pcm, alignment, rid = scene_take(
+                text, cfg["voice_id"], cfg["model"], settings, seed,
+                previous_request_ids=[prev["request_id"]] if fresh else None, next_text=nxt, sr=SR_TTS,
+                previous_text=None if fresh or k == 0 else scenes[k - 1]["lines"][-1]["text"])
+            sf.write(wav_path, pcm, SR_TTS, subtype="PCM_16")
+            meta = {"text": text, "seed": seed, "request_id": rid, "created": time.time(), "alignment": alignment}
+            meta_path.write_text(json.dumps(meta), encoding="utf-8")
+            print(f"  take {scene['id']}: {pcm.size / SR_TTS:5.1f}s (seed {seed})", flush=True)
+        pcm = sf.read(wav_path, dtype="float32")[0]
+        cut, _, _ = split_scene(pcm, meta["alignment"], spans, SR_TTS)
+        gain = scene_gain(cut, SR_TTS, TARGET_RMS_DB, PEAK_CEILING_DB)
+        for line, c in zip(scene["lines"], cut):
+            clips[line["id"]] = resample_poly(c * gain, SR_OUT // SR_TTS, 1).astype(np.float32)
+        prev = meta
+    return clips
+
+
 def split_caption(text: str, max_chars: int = 50):
     """Split a caption into chunks short enough for one or two lines on screen."""
     if len(text) <= max_chars:
@@ -135,8 +182,14 @@ def main():
     voice_dir = ROOT / "public" / "voice"
     voice_dir.mkdir(parents=True, exist_ok=True)
 
+    engine = spec.get("engine", "kokoro")
     pipeline = None
-    if not args.timeline_only:
+    eleven = {}
+    if not args.timeline_only and engine == "elevenlabs":
+        eleven = eleven_clips(spec, only)
+        voice = f"elevenlabs:{spec['elevenlabs']['voice_name']}"
+        speed = spec["elevenlabs"]["speed"]
+    elif not args.timeline_only:
         from kokoro import KPipeline
 
         lang = voice[0]  # 'a' = American English, 'b' = British English
@@ -154,7 +207,11 @@ def main():
             wav_path = voice_dir / f"{line['id']}.wav"
             # "keep": a hand-picked take (e.g. the one Whisper heard correctly) is never overwritten
             locked = line.get("keep", False) and wav_path.exists() and line["id"] not in only
-            if pipeline is not None and not locked and (not only or line["id"] in only):
+            if line["id"] in eleven:
+                clip = eleven[line["id"]]
+                sf.write(wav_path, clip, SR_OUT, subtype="PCM_16")
+                print(f"  {line['id']}: {clip.size / SR_OUT:5.2f}s  {line['text']}", flush=True)
+            elif pipeline is not None and not locked and (not only or line["id"] in only):
                 raw = synthesize(pipeline, line["text"], voice, speed)
                 clip = trim_and_level(raw, SR_TTS)
                 clip = resample_poly(clip, SR_OUT // SR_TTS, 1).astype(np.float32)
