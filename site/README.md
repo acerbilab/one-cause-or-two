@@ -5,10 +5,10 @@ It will be published with GitHub Pages at <https://acerbilab.github.io/one-cause
 
 | Path | Contents |
 |---|---|
-| `index.html` | The page: the film, "Play with it", findings, related work, methods, citation |
+| `index.html` | The page: the film, "Try it yourself", findings, related work, methods, citation, follow links |
 | `css/style.css` | Styles; the palette and type follow the film |
 | `js/observer.js` | The Bayesian causal-inference observer and the assumed and found shapes, ported from `film/src/lib/math.ts` and the film's scenes 5 and 7 |
-| `js/main.js` | The interactive balance, the two findings figures, the transcript, "Copy BibTeX" |
+| `js/main.js` | The interactive balance, the two findings figures, the transcript, "Copy BibTeX", "Share the film" |
 | `assets/` | Poster frame, social-card image, favicon |
 | `fonts/` | Nunito, JetBrains Mono and STIX Two (SIL Open Font License), served from the page itself |
 | `media/` | The film and its captions (ignored by git; see below) |

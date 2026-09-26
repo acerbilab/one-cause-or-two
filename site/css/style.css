@@ -353,6 +353,15 @@ cite {
 	margin-bottom: 0;
 }
 
+.film-share {
+	display: flex;
+	justify-content: center;
+	margin-top: 14px;
+}
+.film-share[hidden] {
+	display: none;
+}
+
 /* ─── bands ─── */
 .band {
 	padding: clamp(64px, 9vw, 112px) 0;
@@ -696,6 +705,13 @@ input[type='range'] {
 .acks {
 	color: var(--dim);
 	font-size: 0.95em;
+}
+
+.follow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 1.4em;
 }
 
 /* ─── footer ─── */
