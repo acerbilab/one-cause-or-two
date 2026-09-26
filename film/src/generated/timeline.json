@@ -325,7 +325,7 @@
    "id": "draw",
    "title": "Let the data draw",
    "from": 2949,
-   "duration": 665,
+   "duration": 672,
    "lines": [
     {
      "id": "d1",
@@ -356,20 +356,20 @@
     },
     {
      "id": "d4",
-     "text": "Distilled into simple formulas, they explain people's answers far better than the standard assumptions.",
-     "caption": "Distilled into simple formulas, they explain people's answers far better than the standard assumptions.",
+     "text": "Distilled into simple formulas, they explain our volunteers' answers better than the standard assumptions.",
+     "caption": "Distilled into simple formulas, they explain our volunteers' answers better than the standard assumptions.",
      "file": "voice/d4.wav",
      "start": 466,
-     "duration": 175,
-     "seconds": 5.828
+     "duration": 182,
+     "seconds": 6.053
     }
    ]
   },
   {
    "id": "end",
    "title": "Resolution",
-   "from": 3614,
-   "duration": 579,
+   "from": 3621,
+   "duration": 574,
    "lines": [
     {
      "id": "r1",
@@ -382,12 +382,12 @@
     },
     {
      "id": "r2",
-     "text": "To understand those bets, measure their ingredients. Don't assume them.",
-     "caption": "To understand those bets, measure their ingredients. Don't assume them.",
+     "text": "One cause, or two? Now we know a little more about how it decides.",
+     "caption": "One cause, or two? Now we know a little more about how it decides.",
      "file": "voice/r2.wav",
      "start": 138,
-     "duration": 114,
-     "seconds": 3.78
+     "duration": 110,
+     "seconds": 3.641
     }
    ]
   }
@@ -614,30 +614,30 @@
    "duration": 54
   },
   {
-   "text": "they explain people's answers far",
+   "text": "they explain our volunteers' answers",
    "from": 3469,
-   "duration": 57
+   "duration": 63
   },
   {
    "text": "better than the standard assumptions.",
-   "from": 3526,
-   "duration": 64
+   "from": 3532,
+   "duration": 65
   },
   {
    "text": "Every moment, your brain is betting on what goes with what.",
-   "from": 3641,
+   "from": 3648,
    "duration": 93
   },
   {
-   "text": "To understand those bets,",
-   "from": 3752,
-   "duration": 41
+   "text": "One cause, or two?",
+   "from": 3759,
+   "duration": 30
   },
   {
-   "text": "measure their ingredients. Don't assume them.",
-   "from": 3792,
-   "duration": 73
+   "text": "Now we know a little more about how it decides.",
+   "from": 3789,
+   "duration": 79
   }
  ],
- "totalFrames": 4193
+ "totalFrames": 4195
 }

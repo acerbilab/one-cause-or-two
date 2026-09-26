@@ -90,7 +90,7 @@
         { "id": "d1", "text": "Instead of assuming the shapes, we let the data draw them." },
         { "id": "d2", "text": "Our senses are sharpest straight ahead, as expected, but the blur soon levels off.", "gap": 0.55 },
         { "id": "d3", "text": "Our expectations? Probably straight ahead, but maybe anywhere: a sharp peak on a broad hill.", "gap": 0.55 },
-        { "id": "d4", "text": "Distilled into simple formulas, they explain people's answers far better than the standard assumptions.", "gap": 0.55 }
+        { "id": "d4", "text": "Distilled into simple formulas, they explain our volunteers' answers better than the standard assumptions.", "gap": 0.55 }
       ]
     },
     {
@@ -100,7 +100,7 @@
       "tail": 10.9,
       "lines": [
         { "id": "r1", "text": "Every moment, your brain is betting on what goes with what." },
-        { "id": "r2", "text": "To understand those bets, measure their ingredients. Don't assume them.", "gap": 0.6 }
+        { "id": "r2", "text": "One cause, or two? Now we know a little more about how it decides.", "gap": 0.6 }
       ]
     }
   ]

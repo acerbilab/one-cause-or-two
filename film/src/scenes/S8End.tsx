@@ -93,10 +93,7 @@ export const S8End: React.FC<SceneProps> = ({standalone}) => {
 	const sunY = lerp(430, 196, ease(f, r1.start, g0 - 10, 0, 1, Easing.bezier(0.3, 0, 0.3, 1)));
 	const gold = ease(f, r1.start, r1.start + 90);
 
-	// 2. the takeaway, written in the sky above the peaks
-	const moral = ease(f, r2.start + Math.round(r2.dur * 0.3), r2.start + Math.round(r2.dur * 0.3) + 14) * (1 - ease(f, g0 + 4, g0 + 14));
-
-	// 3. the gag: flicker and rustle from the same spot → one cause → run
+	// 2. the gag: flicker and rustle from the same spot → one cause → run
 	const cueFlicker = (f - g0) / 34;
 	const signIn = ease(f, g0 + 6, g0 + 16) * (1 - ease(f, g0 + 72, g0 + 82));
 	const merge = ease(f, g0 + 18, g0 + 34);
@@ -254,13 +251,6 @@ export const S8End: React.FC<SceneProps> = ({standalone}) => {
 					!
 				</text>
 			</ThoughtBubble>
-
-			{/* the takeaway */}
-			<g opacity={moral}>
-				<text x={960} y={140} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={80} fill={C.text} style={{paintOrder: 'stroke', stroke: 'rgba(20,20,60,0.35)', strokeWidth: 10}}>
-					Measure. Don't assume.
-				</text>
-			</g>
 
 			{/* iris out, then the end card */}
 			{irisR < 1400 && (

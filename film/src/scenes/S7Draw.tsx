@@ -69,7 +69,7 @@ export const S7Draw: React.FC<SceneProps> = ({standalone}) => {
 	// d4: distilled into formulas
 	const formulaA = ease(f, d4.start + 22, d4.start + 36);
 	const formulaB = ease(f, d4.start + 40, d4.start + 54);
-	const betterAt = d4.start + Math.round(d4.dur * 0.42); // "…people's answers…"
+	const betterAt = d4.start + Math.round(d4.dur * 0.42); // "…explain our volunteers' answers…"
 	const ghosts = 1 - ease(f, betterAt, betterAt + 20);
 	const better = ease(f, betterAt, betterAt + 14);
 	const exit = ease(f, T._end - 26, T._end);
@@ -146,11 +146,11 @@ export const S7Draw: React.FC<SceneProps> = ({standalone}) => {
 
 			{dataDots}
 
-			{/* standard vs distilled: how scattered people's answers were, and each model's prediction */}
+			{/* standard vs distilled: how scattered the volunteers' answers were, and each model's prediction */}
 			{better > 0.001 && (
 				<g opacity={better * (1 - exit)}>
 					<rect x={380} y={34} width={1160} height={300} rx={26} fill="rgba(8,12,34,0.9)" stroke="#34427E" strokeWidth={3} />
-					<Label x={960} y={88} text="spread of people's answers" size={34} weight={800} color={C.dim} />
+					<Label x={960} y={88} text="spread of volunteers' answers" size={34} weight={800} color={C.dim} />
 					<line x1={640} y1={300 - 2.95 * 62} x2={1280} y2={300 - 2.95 * 62} stroke={C.dim} strokeWidth={5} strokeDasharray="14 10" />
 					<Label x={1300} y={300 - 2.95 * 62 + 11} text="standard model" size={34} weight={800} color={C.dim} anchor="start" />
 					<path
@@ -163,7 +163,7 @@ export const S7Draw: React.FC<SceneProps> = ({standalone}) => {
 					{[2.46, 2.33, 2.1, 1.62, 2.14, 2.31, 2.47].map((sd, i) => (
 						<circle key={i} cx={960 + (i - 3) * 100} cy={300 - sd * 62} r={11} fill="#FFFFFF" />
 					))}
-					<Label x={632} y={300 - 2.46 * 62 + 11} text="people" size={30} weight={800} color="#FFFFFF" anchor="end" />
+					<Label x={632} y={300 - 2.46 * 62 + 11} text="volunteers" size={30} weight={800} color="#FFFFFF" anchor="end" />
 					<Label x={960} y={318} text="straight ahead" size={26} weight={700} color={C.dim} />
 				</g>
 			)}

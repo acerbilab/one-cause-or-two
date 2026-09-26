@@ -19,17 +19,17 @@ A marmot on lookout at dusk sees a flicker in the grass and hears a rustle in th
 bushes. Is it one thing (a fox) or two (the wind and a bird)? The film uses her dilemma
 to build, one picture at a time, the idea that the brain combines the senses as a
 statistician would: it weighs how blurry each sense is, what it expects, and whether
-the signals share a cause. It then shows how the study measured the two ingredients of
-that calculation instead of assuming them, and ends back in the meadow, where the
-marmot gets it right.
+the signals share a cause. It then shows how the study inferred the two ingredients of
+that calculation from people's answers instead of assuming them, and ends back in the
+meadow, where the marmot gets it right.
 
 **Recurring motif: the belief hill.** Every guess is drawn as a glowing hill on a
 ground line: the peak is the best guess, the width is the uncertainty ("the wider it
 is, the less sure you are"). Hills sit directly under what they refer to. Sight is
 blue, sound is green, the brain's combined guess is the warm accent (amber), the prior
 is lavender. The same rule draws blur in the later scenes (a row of small hills, one
-per direction), and in the last scene the measured prior, a sharp peak on a broad hill,
-becomes the mountain straight ahead at dawn.
+per direction), and in the last scene the prior found by the study, a sharp peak on a
+broad hill, becomes the mountain straight ahead at dawn.
 
 **Straight ahead is the centre of the screen.** Point-of-view shots and diagrams put
 "straight ahead" at x = 960, which is where the lab's fixation cross sits and where the
@@ -144,7 +144,7 @@ causes" answers weighted by their probabilities.
 | d1 | Instead of assuming the shapes, we let the data draw them. | The lab's answers fly up into two panels: the row of blur hills, and a prior curve held by pins. The pins slide until the shapes settle; dashed ghosts keep the assumed shapes (equal widths, bell curve) for comparison. |
 | d2 | Our senses are sharpest straight ahead, as expected, but the blur soon levels off. | Blur hills: much narrower than assumed in the centre (*sharpest straight ahead*), wider to the sides, and no wider at the edges (*levels off*). |
 | d3 | Our expectations? Probably straight ahead, but maybe anywhere: a sharp peak on a broad hill. | Against the ghost bell curve, a lavender spike on a broad hill: *probably straight ahead* / *but maybe anywhere*. |
-| d4 | Distilled into simple formulas, they explain people's answers far better than the standard assumptions. | The pins drop away; the formulas appear: σ(s) = σ₀ + k₁(1 − e^(−k₂\|s\|)) and *Gaussian + Laplace*. The panels dim behind a card centred on straight ahead: *spread of people's answers* (*people*) dips straight ahead; the *standard model* line misses the dip, the *distilled model* curve follows it. |
+| d4 | Distilled into simple formulas, they explain our volunteers' answers better than the standard assumptions. | The pins drop away; the formulas appear: σ(s) = σ₀ + k₁(1 − e^(−k₂\|s\|)) and *Gaussian + Laplace*. The panels dim behind a card centred on straight ahead: *spread of volunteers' answers* (*volunteers*) dips straight ahead; the *standard model* line misses the dip, the *distilled model* curve follows it. |
 
 The pins sit at the study's pivot locations (0°, 0.1°, 0.3°, 1°, 2°, 4°, 6°, 8°, 10°,
 15°, 20°, mirrored; the 45° pivot lies outside the picture).
@@ -154,7 +154,7 @@ The pins sit at the study's pivot locations (0°, 0.1°, 0.3°, 1°, 2°, 4°, 6
 | Line | Narration | Picture |
 |---|---|---|
 | r1 | Every moment, your brain is betting on what goes with what. | The prior curve rises and fills into the central mountain, a snowy peak with a lit and a shaded face; dawn comes up behind it (gold horizon) and the meadow rises into view, the marmot back on her boulder with a new flower, rim-lit by the sunrise. |
-| r2 | To understand those bets, measure their ingredients. Don't assume them. | Calm wide shot; the sun clears the ridge; above the peaks, **Measure. Don't assume.** |
+| r2 | One cause, or two? Now we know a little more about how it decides. | Calm wide shot; the sun clears the ridge. |
 | — | *(no narration)* | A flicker and a rustle from the same spot. Above it, a blue and a green hill merge into one amber hill: one cause. A big bubble: a fox and "!". She whistles the alarm and dives into the burrow (dust puff). A fox leaps onto the empty boulder, looks around, turns to us, ears drooping; soft *womp womp*. |
 | — | *(end card)* | The iris closes on the fox, then slides down to the burrow, where the marmot's eyes peek out and blink; it closes. **One cause or two?** over a drawn-on amber prior curve. Liu, Holland, Ma & Acerbi (2026) · *Distilling noise characteristics and prior expectations in multisensory causal inference* · PLOS Computational Biology · doi.org/10.1371/journal.pcbi.1014251 |
 
