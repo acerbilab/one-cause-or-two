@@ -159,6 +159,9 @@ up to 20 parameters, and CMA-ES the 40-parameter semiparametric fits.
 
 ## Tooling notes
 
+- To check the landing page without the browser extension, `site/scripts/shot.mjs` drives
+  Remotion's headless Chrome over the DevTools protocol: screenshots at any width, console
+  errors, scripted interactions (`site/README.md`).
 - Remotion's bundled ffmpeg (`node_modules/@remotion/compositor-*/`) lacks the `fps` and
   `select` filters. To pull frames from a render, use PyAV (installed in the venv with
   faster-whisper) together with Pillow.

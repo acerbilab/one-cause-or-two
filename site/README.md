@@ -39,6 +39,18 @@ python -m http.server 8000 -d site
 Then open <http://127.0.0.1:8000>. Opening `index.html` as a file does not work: the page
 loads JavaScript modules and fetches the captions.
 
+To check the page without a browser at hand, `scripts/shot.mjs` takes a screenshot with
+Remotion's headless Chrome and prints console messages and exceptions:
+
+```sh
+node site/scripts/shot.mjs http://127.0.0.1:8000/ desk.png 1280 --full   # whole page, desktop
+node site/scripts/shot.mjs http://127.0.0.1:8000/ phone.png 390 --full   # phone width, touch
+```
+
+`--eval=file.js` runs a script in the page first (for example, to open the transcript or
+press keys on the demo's slider) and prints what it returns. Check both widths, and that
+no exceptions are printed, before committing changes to the page.
+
 ## Deploy
 
 GitHub Pages must be enabled with "GitHub Actions" as the source. Then run the workflow
