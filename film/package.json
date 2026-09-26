@@ -1,0 +1,27 @@
+{
+  "name": "one-cause-or-two",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animated short about multisensory causal inference (Liu, Holland, Ma & Acerbi, PLOS Comput Biol 2026)",
+  "scripts": {
+    "studio": "remotion studio",
+    "stills": "node scripts/stills.mjs",
+    "render": "remotion render Film out/film.mp4 && node scripts/master.mjs out/film.mp4",
+    "render:clean": "remotion render Film out/film-clean.mp4 --props={\"captions\":false} && node scripts/master.mjs out/film-clean.mp4",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.529",
+    "@remotion/cli": "4.0.529",
+    "@remotion/google-fonts": "4.0.529",
+    "@remotion/noise": "4.0.529",
+    "@remotion/renderer": "4.0.529",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.529"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.0",
+    "typescript": "5.9.3"
+  }
+}

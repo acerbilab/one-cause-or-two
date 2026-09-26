@@ -1,0 +1,107 @@
+{
+  "voice": "af_heart",
+  "speed": 1.0,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "cold",
+      "title": "Cold open",
+      "lead": 0.5,
+      "tail": 1.0,
+      "lines": [
+        { "id": "c1", "text": "A flicker in the grass." },
+        { "id": "c2", "text": "A rustle in the bushes.", "gap": 0.4, "keep": true },
+        { "id": "c3", "text": "One thing, or two?", "gap": 0.5 },
+        { "id": "c4", "text": "Get it wrong, and you're dinner.", "gap": 0.6 },
+        { "id": "c5", "text": "Your brain solves this puzzle all day long.", "gap": 0.6 }
+      ]
+    },
+    {
+      "id": "blur",
+      "title": "Noisy senses",
+      "lead": 0.5,
+      "tail": 0.5,
+      "lines": [
+        { "id": "b1", "text": "Trouble is, every sense is a bit blurry." },
+        { "id": "b2", "text": "Eyes tell you roughly where something is.", "gap": 0.4 },
+        { "id": "b3", "text": "Ears, even more roughly.", "gap": 0.2 },
+        { "id": "b4", "text": "Picture each guess as a hill: the wider it is, the less sure you are.", "gap": 0.5 },
+        { "id": "b5", "text": "If both come from one fox, combine them, trusting the sharper sense more.", "gap": 0.5 },
+        { "id": "b6", "text": "Together, they beat either sense alone.", "gap": 0.5 }
+      ]
+    },
+    {
+      "id": "catch",
+      "title": "Merging, and the catch",
+      "lead": 0.3,
+      "tail": 0.6,
+      "lines": [
+        { "id": "k1", "text": "We merge our senses all the time." },
+        { "id": "k2", "text": "On TV, voices seem to come from the lips, not the speakers.", "gap": 1.4 },
+        { "id": "k3", "text": "But what if the flicker was just the wind, and the rustle, a bird?", "gap": 0.9 },
+        { "id": "k4", "text": "Merge them, and you'd dodge a fox that isn't there.", "gap": 0.6 }
+      ]
+    },
+    {
+      "id": "infer",
+      "title": "Causal inference",
+      "lead": 0.6,
+      "tail": 0.6,
+      "lines": [
+        { "id": "i1", "text": "So before merging, the brain must ask: one cause, or two?" },
+        { "id": "i2", "text": "It's called causal inference.", "gap": 0.4 },
+        { "id": "i3", "text": "A leading theory, the Bayesian brain, says we weigh the odds.", "gap": 0.5 },
+        { "id": "i4", "text": "Close together? Probably one cause: merge.", "gap": 0.6 },
+        { "id": "i5", "text": "Far apart? Probably two: keep them separate.", "gap": 0.6 },
+        { "id": "i6", "text": "In between? You hedge your bets.", "gap": 0.6 }
+      ]
+    },
+    {
+      "id": "ingredients",
+      "title": "Two ingredients",
+      "lead": 0.5,
+      "tail": 0.6,
+      "lines": [
+        { "id": "g1", "text": "How far apart is too far? That depends on two ingredients." },
+        { "id": "g2", "text": "How blurry each sense is, in every direction.", "gap": 0.4 },
+        { "id": "g3", "text": "And where it expects things to be: its prior. Blurry guesses get pulled toward it.", "gap": 0.4 },
+        { "id": "g4", "text": "Scientists often assume equal blur everywhere, and a plain bell curve.", "gap": 0.6 },
+        { "id": "g5", "text": "Convenient for the math. But is it true?", "gap": 0.6 }
+      ]
+    },
+    {
+      "id": "lab",
+      "title": "The experiment",
+      "lead": 0.6,
+      "tail": 0.9,
+      "lines": [
+        { "id": "e1", "text": "To find out, we put people in the marmot's place." },
+        { "id": "e2", "text": "Brief flashes. Short beeps.", "gap": 0.6 },
+        { "id": "e3", "text": "Where was it? Same place, or not?", "gap": 0.6 },
+        { "id": "e4", "text": "Fifteen volunteers. Nearly forty-five thousand answers.", "caption": "Fifteen volunteers. Nearly 45,000 answers.", "gap": 0.6 }
+      ]
+    },
+    {
+      "id": "draw",
+      "title": "Let the data draw",
+      "lead": 0.5,
+      "tail": 0.8,
+      "lines": [
+        { "id": "d1", "text": "Instead of assuming the shapes, we let the data draw them." },
+        { "id": "d2", "text": "Our senses are sharpest straight ahead, as expected, but the blur soon levels off.", "gap": 0.55 },
+        { "id": "d3", "text": "Our expectations? Probably straight ahead, but maybe anywhere: a sharp peak on a broad hill.", "gap": 0.55 },
+        { "id": "d4", "text": "Distilled into simple formulas, they explain people's answers far better than the standard assumptions.", "gap": 0.55 }
+      ]
+    },
+    {
+      "id": "end",
+      "title": "Resolution",
+      "lead": 0.9,
+      "tail": 10.9,
+      "lines": [
+        { "id": "r1", "text": "Every moment, your brain is betting on what goes with what." },
+        { "id": "r2", "text": "To understand those bets, measure their ingredients. Don't assume them.", "gap": 0.6 }
+      ]
+    }
+  ]
+}

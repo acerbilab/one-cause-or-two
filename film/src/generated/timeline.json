@@ -1,0 +1,643 @@
+{
+ "fps": 30,
+ "voice": "af_heart",
+ "speed": 1.0,
+ "scenes": [
+  {
+   "id": "cold",
+   "title": "Cold open",
+   "from": 0,
+   "duration": 336,
+   "lines": [
+    {
+     "id": "c1",
+     "text": "A flicker in the grass.",
+     "caption": "A flicker in the grass.",
+     "file": "voice/c1.wav",
+     "start": 15,
+     "duration": 39,
+     "seconds": 1.285
+    },
+    {
+     "id": "c2",
+     "text": "A rustle in the bushes.",
+     "caption": "A rustle in the bushes.",
+     "file": "voice/c2.wav",
+     "start": 66,
+     "duration": 41,
+     "seconds": 1.364
+    },
+    {
+     "id": "c3",
+     "text": "One thing, or two?",
+     "caption": "One thing, or two?",
+     "file": "voice/c3.wav",
+     "start": 121,
+     "duration": 36,
+     "seconds": 1.172
+    },
+    {
+     "id": "c4",
+     "text": "Get it wrong, and you're dinner.",
+     "caption": "Get it wrong, and you're dinner.",
+     "file": "voice/c4.wav",
+     "start": 175,
+     "duration": 45,
+     "seconds": 1.499
+    },
+    {
+     "id": "c5",
+     "text": "Your brain solves this puzzle all day long.",
+     "caption": "Your brain solves this puzzle all day long.",
+     "file": "voice/c5.wav",
+     "start": 238,
+     "duration": 68,
+     "seconds": 2.25
+    }
+   ]
+  },
+  {
+   "id": "blur",
+   "title": "Noisy senses",
+   "from": 336,
+   "duration": 561,
+   "lines": [
+    {
+     "id": "b1",
+     "text": "Trouble is, every sense is a bit blurry.",
+     "caption": "Trouble is, every sense is a bit blurry.",
+     "file": "voice/b1.wav",
+     "start": 15,
+     "duration": 73,
+     "seconds": 2.422
+    },
+    {
+     "id": "b2",
+     "text": "Eyes tell you roughly where something is.",
+     "caption": "Eyes tell you roughly where something is.",
+     "file": "voice/b2.wav",
+     "start": 100,
+     "duration": 58,
+     "seconds": 1.924
+    },
+    {
+     "id": "b3",
+     "text": "Ears, even more roughly.",
+     "caption": "Ears, even more roughly.",
+     "file": "voice/b3.wav",
+     "start": 163,
+     "duration": 49,
+     "seconds": 1.611
+    },
+    {
+     "id": "b4",
+     "text": "Picture each guess as a hill: the wider it is, the less sure you are.",
+     "caption": "Picture each guess as a hill: the wider it is, the less sure you are.",
+     "file": "voice/b4.wav",
+     "start": 227,
+     "duration": 105,
+     "seconds": 3.48
+    },
+    {
+     "id": "b5",
+     "text": "If both come from one fox, combine them, trusting the sharper sense more.",
+     "caption": "If both come from one fox, combine them, trusting the sharper sense more.",
+     "file": "voice/b5.wav",
+     "start": 346,
+     "duration": 121,
+     "seconds": 4.02
+    },
+    {
+     "id": "b6",
+     "text": "Together, they beat either sense alone.",
+     "caption": "Together, they beat either sense alone.",
+     "file": "voice/b6.wav",
+     "start": 482,
+     "duration": 65,
+     "seconds": 2.139
+    }
+   ]
+  },
+  {
+   "id": "catch",
+   "title": "Merging, and the catch",
+   "from": 897,
+   "duration": 458,
+   "lines": [
+    {
+     "id": "k1",
+     "text": "We merge our senses all the time.",
+     "caption": "We merge our senses all the time.",
+     "file": "voice/k1.wav",
+     "start": 9,
+     "duration": 57,
+     "seconds": 1.873
+    },
+    {
+     "id": "k2",
+     "text": "On TV, voices seem to come from the lips, not the speakers.",
+     "caption": "On TV, voices seem to come from the lips, not the speakers.",
+     "file": "voice/k2.wav",
+     "start": 107,
+     "duration": 108,
+     "seconds": 3.589
+    },
+    {
+     "id": "k3",
+     "text": "But what if the flicker was just the wind, and the rustle, a bird?",
+     "caption": "But what if the flicker was just the wind, and the rustle, a bird?",
+     "file": "voice/k3.wav",
+     "start": 242,
+     "duration": 102,
+     "seconds": 3.381
+    },
+    {
+     "id": "k4",
+     "text": "Merge them, and you'd dodge a fox that isn't there.",
+     "caption": "Merge them, and you'd dodge a fox that isn't there.",
+     "file": "voice/k4.wav",
+     "start": 361,
+     "duration": 79,
+     "seconds": 2.621
+    }
+   ]
+  },
+  {
+   "id": "infer",
+   "title": "Causal inference",
+   "from": 1355,
+   "duration": 583,
+   "lines": [
+    {
+     "id": "i1",
+     "text": "So before merging, the brain must ask: one cause, or two?",
+     "caption": "So before merging, the brain must ask: one cause, or two?",
+     "file": "voice/i1.wav",
+     "start": 18,
+     "duration": 104,
+     "seconds": 3.452
+    },
+    {
+     "id": "i2",
+     "text": "It's called causal inference.",
+     "caption": "It's called causal inference.",
+     "file": "voice/i2.wav",
+     "start": 134,
+     "duration": 48,
+     "seconds": 1.599
+    },
+    {
+     "id": "i3",
+     "text": "A leading theory, the Bayesian brain, says we weigh the odds.",
+     "caption": "A leading theory, the Bayesian brain, says we weigh the odds.",
+     "file": "voice/i3.wav",
+     "start": 197,
+     "duration": 97,
+     "seconds": 3.222
+    },
+    {
+     "id": "i4",
+     "text": "Close together? Probably one cause: merge.",
+     "caption": "Close together? Probably one cause: merge.",
+     "file": "voice/i4.wav",
+     "start": 311,
+     "duration": 79,
+     "seconds": 2.624
+    },
+    {
+     "id": "i5",
+     "text": "Far apart? Probably two: keep them separate.",
+     "caption": "Far apart? Probably two: keep them separate.",
+     "file": "voice/i5.wav",
+     "start": 408,
+     "duration": 83,
+     "seconds": 2.746
+    },
+    {
+     "id": "i6",
+     "text": "In between? You hedge your bets.",
+     "caption": "In between? You hedge your bets.",
+     "file": "voice/i6.wav",
+     "start": 508,
+     "duration": 57,
+     "seconds": 1.874
+    }
+   ]
+  },
+  {
+   "id": "ingredients",
+   "title": "Two ingredients",
+   "from": 1938,
+   "duration": 610,
+   "lines": [
+    {
+     "id": "g1",
+     "text": "How far apart is too far? That depends on two ingredients.",
+     "caption": "How far apart is too far? That depends on two ingredients.",
+     "file": "voice/g1.wav",
+     "start": 15,
+     "duration": 106,
+     "seconds": 3.528
+    },
+    {
+     "id": "g2",
+     "text": "How blurry each sense is, in every direction.",
+     "caption": "How blurry each sense is, in every direction.",
+     "file": "voice/g2.wav",
+     "start": 133,
+     "duration": 83,
+     "seconds": 2.736
+    },
+    {
+     "id": "g3",
+     "text": "And where it expects things to be: its prior. Blurry guesses get pulled toward it.",
+     "caption": "And where it expects things to be: its prior. Blurry guesses get pulled toward it.",
+     "file": "voice/g3.wav",
+     "start": 227,
+     "duration": 133,
+     "seconds": 4.422
+    },
+    {
+     "id": "g4",
+     "text": "Scientists often assume equal blur everywhere, and a plain bell curve.",
+     "caption": "Scientists often assume equal blur everywhere, and a plain bell curve.",
+     "file": "voice/g4.wav",
+     "start": 378,
+     "duration": 126,
+     "seconds": 4.184
+    },
+    {
+     "id": "g5",
+     "text": "Convenient for the math. But is it true?",
+     "caption": "Convenient for the math. But is it true?",
+     "file": "voice/g5.wav",
+     "start": 521,
+     "duration": 71,
+     "seconds": 2.348
+    }
+   ]
+  },
+  {
+   "id": "lab",
+   "title": "The experiment",
+   "from": 2548,
+   "duration": 401,
+   "lines": [
+    {
+     "id": "e1",
+     "text": "To find out, we put people in the marmot's place.",
+     "caption": "To find out, we put people in the marmot's place.",
+     "file": "voice/e1.wav",
+     "start": 18,
+     "duration": 79,
+     "seconds": 2.602
+    },
+    {
+     "id": "e2",
+     "text": "Brief flashes. Short beeps.",
+     "caption": "Brief flashes. Short beeps.",
+     "file": "voice/e2.wav",
+     "start": 114,
+     "duration": 57,
+     "seconds": 1.882
+    },
+    {
+     "id": "e3",
+     "text": "Where was it? Same place, or not?",
+     "caption": "Where was it? Same place, or not?",
+     "file": "voice/e3.wav",
+     "start": 189,
+     "duration": 60,
+     "seconds": 1.988
+    },
+    {
+     "id": "e4",
+     "text": "Fifteen volunteers. Nearly forty-five thousand answers.",
+     "caption": "Fifteen volunteers. Nearly 45,000 answers.",
+     "file": "voice/e4.wav",
+     "start": 266,
+     "duration": 108,
+     "seconds": 3.591
+    }
+   ]
+  },
+  {
+   "id": "draw",
+   "title": "Let the data draw",
+   "from": 2949,
+   "duration": 665,
+   "lines": [
+    {
+     "id": "d1",
+     "text": "Instead of assuming the shapes, we let the data draw them.",
+     "caption": "Instead of assuming the shapes, we let the data draw them.",
+     "file": "voice/d1.wav",
+     "start": 15,
+     "duration": 91,
+     "seconds": 3.031
+    },
+    {
+     "id": "d2",
+     "text": "Our senses are sharpest straight ahead, as expected, but the blur soon levels off.",
+     "caption": "Our senses are sharpest straight ahead, as expected, but the blur soon levels off.",
+     "file": "voice/d2.wav",
+     "start": 122,
+     "duration": 152,
+     "seconds": 5.063
+    },
+    {
+     "id": "d3",
+     "text": "Our expectations? Probably straight ahead, but maybe anywhere: a sharp peak on a broad hill.",
+     "caption": "Our expectations? Probably straight ahead, but maybe anywhere: a sharp peak on a broad hill.",
+     "file": "voice/d3.wav",
+     "start": 291,
+     "duration": 159,
+     "seconds": 5.288
+    },
+    {
+     "id": "d4",
+     "text": "Distilled into simple formulas, they explain people's answers far better than the standard assumptions.",
+     "caption": "Distilled into simple formulas, they explain people's answers far better than the standard assumptions.",
+     "file": "voice/d4.wav",
+     "start": 466,
+     "duration": 175,
+     "seconds": 5.828
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "title": "Resolution",
+   "from": 3614,
+   "duration": 579,
+   "lines": [
+    {
+     "id": "r1",
+     "text": "Every moment, your brain is betting on what goes with what.",
+     "caption": "Every moment, your brain is betting on what goes with what.",
+     "file": "voice/r1.wav",
+     "start": 27,
+     "duration": 93,
+     "seconds": 3.087
+    },
+    {
+     "id": "r2",
+     "text": "To understand those bets, measure their ingredients. Don't assume them.",
+     "caption": "To understand those bets, measure their ingredients. Don't assume them.",
+     "file": "voice/r2.wav",
+     "start": 138,
+     "duration": 114,
+     "seconds": 3.78
+    }
+   ]
+  }
+ ],
+ "captions": [
+  {
+   "text": "A flicker in the grass.",
+   "from": 15,
+   "duration": 39
+  },
+  {
+   "text": "A rustle in the bushes.",
+   "from": 66,
+   "duration": 41
+  },
+  {
+   "text": "One thing, or two?",
+   "from": 121,
+   "duration": 35
+  },
+  {
+   "text": "Get it wrong, and you're dinner.",
+   "from": 175,
+   "duration": 45
+  },
+  {
+   "text": "Your brain solves this puzzle all day long.",
+   "from": 238,
+   "duration": 68
+  },
+  {
+   "text": "Trouble is, every sense is a bit blurry.",
+   "from": 351,
+   "duration": 73
+  },
+  {
+   "text": "Eyes tell you roughly where something is.",
+   "from": 436,
+   "duration": 58
+  },
+  {
+   "text": "Ears, even more roughly.",
+   "from": 499,
+   "duration": 48
+  },
+  {
+   "text": "Picture each guess as a hill:",
+   "from": 563,
+   "duration": 45
+  },
+  {
+   "text": "the wider it is, the less sure you are.",
+   "from": 607,
+   "duration": 60
+  },
+  {
+   "text": "If both come from one fox, combine them,",
+   "from": 682,
+   "duration": 67
+  },
+  {
+   "text": "trusting the sharper sense more.",
+   "from": 749,
+   "duration": 54
+  },
+  {
+   "text": "Together, they beat either sense alone.",
+   "from": 818,
+   "duration": 64
+  },
+  {
+   "text": "We merge our senses all the time.",
+   "from": 906,
+   "duration": 56
+  },
+  {
+   "text": "On TV, voices seem to come from the lips, not the speakers.",
+   "from": 1004,
+   "duration": 108
+  },
+  {
+   "text": "But what if the flicker was just the wind,",
+   "from": 1139,
+   "duration": 66
+  },
+  {
+   "text": "and the rustle, a bird?",
+   "from": 1204,
+   "duration": 36
+  },
+  {
+   "text": "Merge them, and you'd dodge a fox that isn't there.",
+   "from": 1258,
+   "duration": 79
+  },
+  {
+   "text": "So before merging, the brain must ask: one cause, or two?",
+   "from": 1373,
+   "duration": 104
+  },
+  {
+   "text": "It's called causal inference.",
+   "from": 1489,
+   "duration": 48
+  },
+  {
+   "text": "A leading theory, the Bayesian brain,",
+   "from": 1552,
+   "duration": 60
+  },
+  {
+   "text": "says we weigh the odds.",
+   "from": 1611,
+   "duration": 37
+  },
+  {
+   "text": "Close together? Probably one cause: merge.",
+   "from": 1666,
+   "duration": 79
+  },
+  {
+   "text": "Far apart? Probably two: keep them separate.",
+   "from": 1763,
+   "duration": 82
+  },
+  {
+   "text": "In between? You hedge your bets.",
+   "from": 1863,
+   "duration": 56
+  },
+  {
+   "text": "How far apart is too far?",
+   "from": 1953,
+   "duration": 46
+  },
+  {
+   "text": "That depends on two ingredients.",
+   "from": 1999,
+   "duration": 59
+  },
+  {
+   "text": "How blurry each sense is, in every direction.",
+   "from": 2071,
+   "duration": 82
+  },
+  {
+   "text": "And where it expects things to be: its prior.",
+   "from": 2165,
+   "duration": 74
+  },
+  {
+   "text": "Blurry guesses get pulled toward it.",
+   "from": 2239,
+   "duration": 59
+  },
+  {
+   "text": "Scientists often assume equal blur everywhere,",
+   "from": 2316,
+   "duration": 84
+  },
+  {
+   "text": "and a plain bell curve.",
+   "from": 2399,
+   "duration": 42
+  },
+  {
+   "text": "Convenient for the math. But is it true?",
+   "from": 2459,
+   "duration": 70
+  },
+  {
+   "text": "To find out, we put people in the marmot's place.",
+   "from": 2566,
+   "duration": 78
+  },
+  {
+   "text": "Brief flashes. Short beeps.",
+   "from": 2662,
+   "duration": 56
+  },
+  {
+   "text": "Where was it? Same place, or not?",
+   "from": 2737,
+   "duration": 60
+  },
+  {
+   "text": "Fifteen volunteers. Nearly 45,000 answers.",
+   "from": 2814,
+   "duration": 108
+  },
+  {
+   "text": "Instead of assuming the shapes,",
+   "from": 2964,
+   "duration": 49
+  },
+  {
+   "text": "we let the data draw them.",
+   "from": 3013,
+   "duration": 41
+  },
+  {
+   "text": "Our senses are sharpest straight ahead,",
+   "from": 3071,
+   "duration": 73
+  },
+  {
+   "text": "as expected, but the blur soon levels off.",
+   "from": 3145,
+   "duration": 79
+  },
+  {
+   "text": "Our expectations? Probably straight ahead,",
+   "from": 3240,
+   "duration": 73
+  },
+  {
+   "text": "but maybe anywhere: a sharp peak on a broad hill.",
+   "from": 3313,
+   "duration": 85
+  },
+  {
+   "text": "Distilled into simple formulas,",
+   "from": 3415,
+   "duration": 54
+  },
+  {
+   "text": "they explain people's answers far",
+   "from": 3469,
+   "duration": 57
+  },
+  {
+   "text": "better than the standard assumptions.",
+   "from": 3526,
+   "duration": 64
+  },
+  {
+   "text": "Every moment, your brain is betting on what goes with what.",
+   "from": 3641,
+   "duration": 93
+  },
+  {
+   "text": "To understand those bets,",
+   "from": 3752,
+   "duration": 41
+  },
+  {
+   "text": "measure their ingredients. Don't assume them.",
+   "from": 3792,
+   "duration": 73
+  }
+ ],
+ "totalFrames": 4193
+}
