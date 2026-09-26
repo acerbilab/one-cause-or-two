@@ -28,9 +28,9 @@
 <header class="topbar">
 	<a class="lab" href="https://www.helsinki.fi/en/researchgroups/machine-and-human-intelligence">Machine and Human Intelligence Group</a>
 	<nav aria-label="Sections">
-		<a href="#play">Play</a>
+		<a href="#play">Try it</a>
 		<a href="#found">Findings</a>
-		<a href="#methods">Methods</a>
+		<a href="#methods">For modellers</a>
 		<a href="#cite">Cite</a>
 	</nav>
 </header>
@@ -55,7 +55,10 @@
 
 		<div class="actions">
 			<a class="btn primary" href="https://doi.org/10.1371/journal.pcbi.1014251">Read the paper</a>
-			<a class="btn" href="#notebook">Try the notebook</a>
+			<a class="btn ghost" href="#play">Try it yourself</a>
+			<a class="btn ghost" href="#found">What we found</a>
+			<a class="btn ghost" href="#methods">For modellers</a>
+			<a class="btn ghost" href="#cite">Cite and reuse</a>
 		</div>
 
 		<details class="transcript">
@@ -68,8 +71,8 @@
 
 <section id="play" class="band" aria-labelledby="play-title">
 	<div class="wrap">
-		<p class="eyebrow">Play with it</p>
-		<h2 id="play-title">Weigh the odds yourself</h2>
+		<p class="eyebrow">Try it yourself</p>
+		<h2 id="play-title">Weigh the odds</h2>
 		<p class="lead">A flash appears straight ahead, and you hear a beep. Did they come from the same thing? Drag the sound, and watch the balance weigh <span class="c-belief">one cause</span> against two.</p>
 
 		<figure class="demo">
@@ -91,9 +94,9 @@
 
 <section id="found" class="band" aria-labelledby="found-title">
 	<div class="wrap">
-		<p class="eyebrow">What the study found</p>
+		<p class="eyebrow">What we found</p>
 		<h2 id="found-title">Two ingredients, drawn from the data</h2>
-		<p class="lead">The balance also rests on two ingredients: how blurry each sense is in every direction, and where the brain expects things to be, its <span class="c-prior">prior</span>. Models of causal inference often assume equal blur everywhere and a plain bell-curve prior, and so does the demo above. This study inferred the shapes of both from people's answers instead, using flexible models.</p>
+		<p class="lead">The balance also rests on two ingredients: how blurry each sense is in every direction, and where the brain expects things to be, its <span class="c-prior">prior</span>. Models of causal inference often assume equal blur everywhere and a plain bell-curve prior, and so does the demo above. We inferred the shapes of both from people's answers instead, using flexible models.</p>
 
 		<ul class="facts" aria-label="The experiment">
 			<li><b>15</b> paid volunteers</li>
@@ -106,17 +109,17 @@
 			<figure class="card fig">
 				<h3>Sharpest straight ahead, then the blur levels off</h3>
 				<svg id="fig-blur" viewBox="0 0 560 215" role="img" aria-label="Seven small blue hills, one per direction. Dashed hills of equal width show the usual assumption; solid hills are narrow straight ahead, wider off-centre, and no wider toward the edges."></svg>
-				<figcaption>Each hill shows how blurry sight is in one direction. <span class="dash">Dashed</span>: the usual assumption, the same everywhere. Solid: the shape the study found. That blur grows away from the centre was known; the new part is its shape: a steep rise just off-centre, then a plateau, within the tested range (±20° for sight, ±15° for sound).</figcaption>
+				<figcaption>Each hill shows how blurry sight is in one direction. <span class="dash">Dashed</span>: the usual assumption, the same everywhere. Solid: the shape we found. That blur grows away from the centre was known; the new part is its shape: a steep rise just off-centre, then a plateau, within the tested range (±20° for sight, ±15° for sound).</figcaption>
 			</figure>
 			<figure class="card fig">
 				<h3>Expectations: a sharp peak on a broad hill</h3>
 				<svg id="fig-prior" viewBox="0 0 560 215" role="img" aria-label="A lavender curve with a sharp spike at the centre on top of broad tails, compared with a dashed bell curve."></svg>
-				<figcaption>The <span class="c-prior">prior</span>: where people expect things to be. <span class="dash">Dashed</span>: a plain bell curve. Solid: what the study found, a sharp central peak on broad tails ("probably straight ahead, but maybe anywhere"), described by a mixture of a Gaussian and a Laplace distribution.</figcaption>
+				<figcaption>The <span class="c-prior">prior</span>: where people expect things to be. <span class="dash">Dashed</span>: a plain bell curve. Solid: what we found, a sharp central peak on broad tails ("probably straight ahead, but maybe anywhere"), described by a mixture of a Gaussian and a Laplace distribution.</figcaption>
 			</figure>
 		</div>
 		<p class="small">The shapes are illustrative. The fitted ones are in the paper (Fig 4).</p>
 
-		<p>Distilled into simple formulas (<span class="formula">σ(<i>s</i>) = σ<sub>0</sub> + <i>k</i><sub>1</sub>(1 − e<sup>−<i>k</i><sub>2</sub>|<i>s</i>|</sup>)</span> for the blur, and a mixture of a Gaussian and a Laplace distribution for the prior), these shapes explain the volunteers' answers better than the standard assumptions. The authors commit to the shapes, not to these exact formulas: the data pin down the shapes but not a unique formula. All of this rests on one experiment. The authors expect similar shapes to hold in other studies, but that is still to be tested.</p>
+		<p>Distilled into simple formulas (<span class="formula">σ(<i>s</i>) = σ<sub>0</sub> + <i>k</i><sub>1</sub>(1 − e<sup>−<i>k</i><sub>2</sub>|<i>s</i>|</sup>)</span> for the blur, and a mixture of a Gaussian and a Laplace distribution for the prior), these shapes explain the volunteers' answers better than the standard assumptions. We commit to the shapes, not to these exact formulas: the data pin down the shapes but not a unique formula. All of this rests on one experiment. We expect similar shapes to hold in other studies, but that is still to be tested.</p>
 
 		<h3 class="sub">Also in the study</h3>
 		<ul class="more">
@@ -151,7 +154,7 @@
 	<div class="wrap">
 		<p class="eyebrow">For modellers</p>
 		<h2 id="methods-title">Fit models like this one</h2>
-		<p class="lead">This part is for researchers who build computational models of perception and behaviour. The observer in the demo has a closed form. The study's observer, with direction-dependent blur and a peaked prior, does not: its likelihood needs numerical integration and is slow to evaluate, as is typical of models in computational neuroscience. Our lab builds tools for fitting and comparing such models, and causal-inference models from Acerbi et al. (2018) are benchmarks in the papers behind BADS, VBMC, S-VBMC and NFR.</p>
+		<p class="lead">This part is for researchers who build computational models of perception and behaviour. The observer in the demo has a closed form. The study's observer, with direction-dependent blur and a peaked prior, does not: its likelihood needs numerical integration and is slow to evaluate, as is typical of models in computational neuroscience. Our lab builds tools for fitting and comparing such models. Causal-inference models are realistic and hard to fit, so we also use them as benchmarks in several of our methods papers.</p>
 
 		<article id="notebook" class="card start">
 			<div>
@@ -169,7 +172,7 @@
 			<article class="card tool">
 				<p class="kicker c-sight">Fit your model</p>
 				<h3>PyBADS <span>· BADS</span></h3>
-				<p>Bayesian Adaptive Direct Search: fast, robust optimization for maximum-likelihood and MAP fits when the objective is rough, noisy or slow to evaluate, with up to about 20 parameters. The study used BADS for every fit with up to 20 parameters, and CMA-ES for its 40-parameter semiparametric fits.</p>
+				<p>Bayesian Adaptive Direct Search: fast, robust optimization for maximum-likelihood and MAP fits when the objective is rough, noisy or slow to evaluate, with up to about 20 parameters. In the study, we used BADS for every fit with up to 20 parameters, and CMA-ES for the 40-parameter semiparametric fits.</p>
 				<code class="install">pip install pybads</code>
 				<p class="links"><a href="https://acerbilab.github.io/pybads/">Docs<span class="sr-only"> for PyBADS</span></a> <a href="https://github.com/acerbilab/pybads">Python<span class="sr-only"> (PyBADS)</span></a> <a href="https://github.com/acerbilab/bads">MATLAB<span class="sr-only"> (BADS)</span></a></p>
 				<p class="ref">Acerbi &amp; Ma, NeurIPS 2017 · Singh &amp; Acerbi, JOSS 2024</p>
@@ -180,7 +183,7 @@
 				<p>Variational Bayesian Monte Carlo: an approximate posterior over your parameters and an estimate of the model evidence, for model comparison, from a small budget of likelihood evaluations, even noisy ones. Best with up to about 10 parameters. Stacking (S-VBMC) combines several runs into a better posterior.</p>
 				<code class="install">pip install pyvbmc</code>
 				<p class="links"><a href="https://acerbilab.github.io/pyvbmc/">Docs<span class="sr-only"> for PyVBMC</span></a> <a href="https://github.com/acerbilab/pyvbmc">Python<span class="sr-only"> (PyVBMC)</span></a> <a href="https://github.com/acerbilab/vbmc">MATLAB<span class="sr-only"> (VBMC)</span></a> <a href="https://github.com/acerbilab/svbmc">S-VBMC</a></p>
-				<p class="ref">Acerbi, NeurIPS 2018 and 2020 · Huggins et al., JOSS 2023 · Silvestrin, Li &amp; Acerbi, TMLR 2025</p>
+				<p class="ref">Acerbi, NeurIPS 2018 and 2020 · Huggins, Li, Tobaben, Aarnos &amp; Acerbi, JOSS 2023 · Silvestrin, Li &amp; Acerbi, TMLR 2025</p>
 			</article>
 			<article class="card tool">
 				<p class="kicker c-sound">When you can only simulate</p>
@@ -197,13 +200,9 @@
 			<h3>ACE <span>· nanoACE</span></h3>
 			<p>The Amortized Conditioning Engine: one transformer, trained on simulated data, that answers inference and prediction questions in a single forward pass and can take prior information at run time. It is research code in active development, and the start of our next generation of methods. nanoACE is a small, readable implementation with an in-browser playground.</p>
 			<p class="links"><a href="https://acerbilab.github.io/nanoACE/">Playground</a> <a href="https://github.com/acerbilab/nanoACE">nanoACE</a> <a href="https://acerbilab.github.io/amortized-conditioning-engine/">ACE paper</a></p>
-			<p class="ref">Chang et al., AISTATS 2025</p>
+			<p class="ref">Chang, Loka, Huang, Remes, Kaski &amp; Acerbi, AISTATS 2025</p>
 		</article>
 
-		<p class="research">Also from the lab, as research code:
-			<a href="https://github.com/acerbilab/normalizing-flow-regression">NFR</a>, a posterior from log-density evaluations you already have, such as those from optimization runs (Li et al., AABI 2025);
-			<a href="https://github.com/acerbilab/vsbq">VSBQ</a>, fast post-process Bayesian inference from existing evaluations (Li et al., Statistics and Computing 2025);
-			<a href="https://github.com/acerbilab/prior-guide">PriorGuide</a>, changing the prior of a trained simulation-based inference model at test time (Yang et al., ICLR 2026).</p>
 		<p class="research">Questions about our tools? Ask in our <a href="https://github.com/orgs/acerbilab/discussions">Discussions forum</a>. The data and analysis code of the study are at <a href="https://github.com/LSZ2001/Audiovisual-causal-inference">LSZ2001/Audiovisual-causal-inference</a>.</p>
 	</div>
 </section>
@@ -241,7 +240,7 @@
 		</div>
 
 		<h3 class="sub" id="acknowledgements">Acknowledgements</h3>
-		<p class="acks">The experiment was run at Baylor College of Medicine. Shuze Liu is at Harvard University, Wei Ji Ma at New York University and Luigi Acerbi at the University of Helsinki; Trevor Holland was at Baylor College of Medicine. For this study, Luigi Acerbi was partly supported by the Research Council of Finland (grants 356498 and 358980) and acknowledges the research environment provided by ELLIS Institute Finland. The authors thank Emmanouil Froudarakis for a precursor to the analysis, and the staff of NYU's High Performance Computing services.</p>
+		<p class="acks">The experiment was run at Baylor College of Medicine. Shuze Liu is at Harvard University, Wei Ji Ma at New York University and Luigi Acerbi at the University of Helsinki; Trevor Holland was at Baylor College of Medicine. For this study, Luigi Acerbi was partly supported by the Research Council of Finland (grants 356498 and 358980) and acknowledges the research environment provided by ELLIS Institute Finland. We thank Emmanouil Froudarakis for a precursor to the analysis, and the staff of NYU's High Performance Computing services.</p>
 	</div>
 </section>
 
