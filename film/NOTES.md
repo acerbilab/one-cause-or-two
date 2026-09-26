@@ -57,10 +57,9 @@ e1014251, transcribed in [acerbilab/pubs-llms](https://github.com/acerbilab/pubs
 - **"A rustle in the bushes"** (c2): the Kokoro voice tends to pronounce "rustle" close
   to "wrestle". The take used is the one of eight that Whisper heard as
   "rustle/Russell", and it is locked with `"keep": true` in `narration.json`.
-- **Upload limits:**
-  - X (Twitter) accepts up to 2:20 on standard accounts; the film is 2:19.8.
-  - This limit is from memory; check it and the other platforms' current limits.
-  - Vertical platforms (Reels, TikTok, Shorts) would need a 9:16 re-layout.
+- **Upload limits:** check each platform's current limits for length and format. The film
+  is 2:19.8, in 16:9; vertical platforms (Reels, TikTok, Shorts) would need a 9:16
+  re-layout.
 - **Voice:** `af_heart` (Kokoro, Apache-2.0). Samples of other voices are in
   `out/voice-samples/`. To switch voices:
   1. Change `"voice"` in `narration.json`.

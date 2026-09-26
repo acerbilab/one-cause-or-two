@@ -8,7 +8,7 @@ inference* (Liu, Holland, Ma & Acerbi, PLOS Computational Biology, 2026).
 No prior knowledge of statistics or neuroscience is assumed; every idea is carried by a
 picture first and by words second.
 
-**Format.** 1920×1080, 30 fps, 139.8 s (under X's 2:20 limit for standard accounts).
+**Format.** 1920×1080, 30 fps, 139.8 s.
 Narration by a local text-to-speech voice (Kokoro, `af_heart`). Burned-in captions in
 the main render (most feeds autoplay muted), a clean render without captions, and an
 `.srt` file.
