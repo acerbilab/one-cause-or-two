@@ -36,7 +36,7 @@ export function causalInference({xV, xA, sV, sA, sP, pCommon}) {
 // the shapes the study found, not its fitted values.
 export const FLAT_SIGMA = 2.6;
 export const BELL_SD = 11;
-export const noiseFound = (u) => 1.0 + 2.8 * (1 - Math.exp(-0.3 * Math.abs(u)));
+export const noiseFound = (u) => 1.0 + 2.8 * (1 - Math.exp(-0.15 * Math.abs(u)));
 export const priorFound = (u) => 0.88 * gauss(u, 0, 11) + 0.12 * laplace(u, 0, 1.0);
 export const priorAssumed = (u) => gauss(u, 0, BELL_SD);
 

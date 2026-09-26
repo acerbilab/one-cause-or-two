@@ -17,7 +17,7 @@ const PIVOTS = [0, 0.1, 0.3, 1, 2, 4, 6, 8, 10, 15, 20];
 const PIVOTS_ALL = [...PIVOTS.slice(1).map((p) => -p).reverse(), ...PIVOTS];
 
 // Shapes found by the study (display parameters)
-export const noiseFound = (u: number) => 1.0 + 2.8 * (1 - Math.exp(-0.3 * Math.abs(u)));
+export const noiseFound = (u: number) => 1.0 + 2.8 * (1 - Math.exp(-0.15 * Math.abs(u)));
 export const priorFound = (u: number) => 0.88 * gauss(u, 0, 11) + 0.12 * laplace(u, 0, 1.0);
 export const priorAssumed = (u: number) => gauss(u, 0, BELL_SD);
 

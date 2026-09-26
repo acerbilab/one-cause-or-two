@@ -30,6 +30,10 @@ e1014251, transcribed in [acerbilab/pubs-llms](https://github.com/acerbilab/pubs
   match the shapes, not with the fitted values. That includes the belief hills, the blur
   widths, the prior, and the causal-inference demonstration (sight σ = 3, sound σ = 5,
   prior σ = 20, P(one cause) = 0.65).
+- **The blur rises more gently than in the fits.** The hills stand 8 units apart, and the
+  blur is drawn as σ(u) = 1 + 2.8(1 − e^(−0.15\|u\|)), so the two hills next to the centre
+  come out visibly narrower than the outer four. The fitted curves in paper Fig 4 rise
+  more steeply; at this spacing they would draw every off-centre hill at the same width.
 - **The inset "spread of volunteers' answers"** is a schematic of paper Fig 2C (the
   standard model misses the dip in response variability straight ahead) and Figs 8C/10C
   (the distilled model captures it). The dots are not data points.
