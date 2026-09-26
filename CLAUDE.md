@@ -32,6 +32,10 @@ first.
 | `film/scripts/` | `stills.mjs` (review stills), `master.mjs` (loudness normalisation of a render) |
 | `film/public/voice/`, `film/public/sfx/` | Generated audio |
 | `film/out/` | Renders, stills, review sheets (ignored) |
+| `site/` | The landing page: static HTML, CSS and JS, no build step (`site/README.md`) |
+| `site/media/` | The film and its captions for local preview (ignored; deployed from a release) |
+| `notebook/` | Colab notebook: the study in miniature, fitted with PyBADS and compared with PyVBMC |
+| `.github/workflows/pages.yml` | Deploys `site/` to GitHub Pages, run by hand |
 
 ## Commands
 
@@ -42,12 +46,13 @@ npm install
 python -m venv tts/.venv
 tts/.venv/Scripts/python -m pip install "kokoro>=0.9.4" soundfile faster-whisper scipy pillow
 
-tts/.venv/Scripts/python tts/make_voice.py              # narration -> public/voice, src/generated/timeline.json, out/film.srt
+tts/.venv/Scripts/python tts/make_voice.py              # narration -> public/voice, src/generated/timeline.json, out/film.srt + .vtt
 tts/.venv/Scripts/python tts/make_voice.py --only c2    # re-voice one line (--timeline-only: re-time from existing clips)
 tts/.venv/Scripts/python tts/verify_voice.py            # transcribe every clip back with Whisper
 tts/.venv/Scripts/python tts/make_audio.py              # all sound; --only score (etc.) for one file
 npx tsc --noEmit
 npm run stills -- S5-ingredients g3+40 g4+10            # stills at offsets from narration lines -> out/stills/
+npm run stills -- Film 178 --clean --full               # a full-size frame of the whole film, without captions
 npm run render                                          # out/film.mp4 with captions, then mastered to -16 LUFS
 npm run render:clean                                    # out/film-clean.mp4 without captions
 ```
@@ -98,6 +103,30 @@ Compositions: `Film` (the whole film; props `captions`, `music`), and `S1-cold` 
 - **Audio cannot be judged from code.** Levels come from `scripts/master.mjs`, and
   intelligibility from transcribing the final mix with Whisper. Whether it sounds good is for
   a person to judge.
+
+## The landing page
+
+- `site/` is plain HTML, CSS and JavaScript modules. Preview it with
+  `python -m http.server 8000 -d site`; from `file://` the modules and the caption fetch
+  fail.
+- `site/js/observer.js` ports the film's observer (`film/src/lib/math.ts`) and the display
+  shapes of scene 7. Keep the two in step.
+- The page plays `site/media/film-clean.mp4` with `site/media/film.vtt`, and builds its
+  transcript from the same captions. Neither file is in git: the Pages workflow downloads
+  them from a release, so every release must carry both.
+- The page's claims follow the same accuracy rules as the film's.
+
+## The notebook
+
+- `notebook/one_cause_or_two.ipynb` is committed with its outputs, so GitHub shows the
+  figures. After editing it, re-run it end to end and save the outputs:
+  `notebook/.venv/Scripts/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 notebook/one_cause_or_two.ipynb`
+  (the venv setup is in `notebook/README.md`). Seeds are fixed, so a re-run reproduces the
+  numbers.
+- It takes several minutes, most of it in PyVBMC, and it is CPU-heavy: run it alone.
+- Claims about the paper must come from the paper's text. The figure descriptions in the
+  pubs-llms transcription are machine-written readings of the figures, not the authors'
+  statements.
 
 ## Visual language
 

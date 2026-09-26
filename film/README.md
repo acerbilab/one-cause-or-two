@@ -20,6 +20,7 @@ generated in code:
 | `out/film.mp4` | The film with burned-in captions (for feeds that autoplay muted) |
 | `out/film-clean.mp4` | The same without captions (for platforms that take a caption file) |
 | `out/film.srt` | Captions as subtitles |
+| `out/film.vtt` | The same captions as WebVTT, for the landing page |
 | `out/voice-samples/` | The opening lines in seven Kokoro voices, for choosing a narrator |
 
 ## Rebuilding
@@ -36,7 +37,7 @@ tts/.venv/Scripts/python -m pip install "kokoro>=0.9.4" soundfile faster-whisper
 The pipeline, in order:
 
 ```sh
-# 1. narration → public/voice/*.wav, src/generated/timeline.json, out/film.srt
+# 1. narration → public/voice/*.wav, src/generated/timeline.json, out/film.srt and .vtt
 tts/.venv/Scripts/python tts/make_voice.py
 # 2. transcribe the narration back to catch dropped or garbled words
 tts/.venv/Scripts/python tts/verify_voice.py
@@ -44,6 +45,7 @@ tts/.venv/Scripts/python tts/verify_voice.py
 tts/.venv/Scripts/python tts/make_audio.py
 # 4. review stills, then render
 npm run stills -- S4-infer i4+30 i6+40     # scene composition, frames by narration line
+npm run stills -- Film 178 --clean --full   # whole film, no captions, full size
 npm run render          # renders, then masters the audio to -16 LUFS (scripts/master.mjs)
 npm run render:clean
 ```

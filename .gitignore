@@ -2,3 +2,8 @@
 Thumbs.db
 desktop.ini
 PLAN.md
+
+# local environments and media (the film is fetched from the release at deploy time)
+notebook/.venv/
+.ipynb_checkpoints/
+site/media/

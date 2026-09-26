@@ -4,6 +4,7 @@ Reads ../narration.json and writes:
   public/voice/<line_id>.wav    one 48 kHz mono clip per narration line
   src/generated/timeline.json   scene and line frame positions, captions
   out/film.srt                  subtitles for platforms that take a caption file
+  out/film.vtt                  the same captions as WebVTT, for the landing page's <video>
 
 Scene durations are derived from the spoken audio: each scene lasts
 lead + sum(gap + line duration) + tail, so re-voicing the script (another
@@ -109,12 +110,12 @@ def merge_short(chunks, dur, min_seconds=1.2, max_chars=62):
     return out
 
 
-def srt_time(t: float) -> str:
+def srt_time(t: float, sep: str = ",") -> str:
     ms = int(round(t * 1000))
     h, ms = divmod(ms, 3600_000)
     m, ms = divmod(ms, 60_000)
     s, ms = divmod(ms, 1000)
-    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+    return f"{h:02d}:{m:02d}:{s:02d}{sep}{ms:03d}"
 
 
 def main():
@@ -211,6 +212,10 @@ def main():
     with open(out_dir / "film.srt", "w", encoding="utf-8") as f:
         for k, (a, b, text) in enumerate(srt_entries, 1):
             f.write(f"{k}\n{srt_time(a)} --> {srt_time(b)}\n{text}\n\n")
+    with open(out_dir / "film.vtt", "w", encoding="utf-8") as f:
+        f.write("WEBVTT\n\n")
+        for a, b, text in srt_entries:
+            f.write(f"{srt_time(a, '.')} --> {srt_time(b, '.')}\n{text}\n\n")
 
     total = frame_cursor / fps
     print(f"\nTotal: {total:.1f}s ({frame_cursor} frames)", flush=True)
