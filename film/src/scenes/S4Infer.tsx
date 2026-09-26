@@ -34,6 +34,16 @@ export const soundU = (f: number) => {
 
 export const tiltFor = (p1: number) => -(p1 - 0.5) * 2 * 11;
 
+/** "Hedge your bets": the merged and the separate answer under your guess, as faint dashed bumps. */
+export const Bets: React.FC<{ci: ReturnType<typeof causalInference>; opacity: number; labels: number; id: string}> = ({ci, opacity, labels, id}) => (
+	<g>
+		<Hill id={`${id}bm`} f={(u) => ci.p1 * gauss(u, ci.mu1, ci.sd1)} color={C.belief} baseY={INFER_BASE} yScale={INFER_YS} opacity={0.85 * opacity} fill={0} stroke={3} dashed glow={false} u0={-14} u1={34} />
+		<Hill id={`${id}bs`} f={(u) => (1 - ci.p1) * gauss(u, ci.muA2, ci.sdA2)} color={C.belief} baseY={INFER_BASE} yScale={INFER_YS} opacity={0.85 * opacity} fill={0} stroke={3} dashed glow={false} u0={-14} u1={34} />
+		<Label x={fieldX(ci.mu1)} y={INFER_BASE + 50} text="merge" color={C.belief} size={32} opacity={labels} />
+		<Label x={fieldX(ci.muA2)} y={INFER_BASE + 50} text="separate" color={C.belief} size={32} opacity={labels} />
+	</g>
+);
+
 const Title: React.FC<{f: number; start: number; text: string; y: number; size: number; color?: string; weight?: number}> = ({
 	f,
 	start,
@@ -85,6 +95,8 @@ export const S4Infer: React.FC<SceneProps> = ({standalone}) => {
 			peakU = u;
 		}
 	}
+	// i6: the two bets inside your guess, each weighted by its odds
+	const bets = ease(f, T.i6.start + 4, T.i6.start + 16);
 	const vTop = INFER_BASE - gauss(0, 0, OBS.sV) * INFER_YS;
 	const aTop = INFER_BASE - gauss(0, 0, OBS.sA) * INFER_YS;
 	const pct = (p: number) => `${Math.round(p * 100)}%`;
@@ -155,6 +167,7 @@ export const S4Infer: React.FC<SceneProps> = ({standalone}) => {
 			<Hill id="s4v" f={(u) => gauss(u, 0, OBS.sV)} color={C.sight} baseY={INFER_BASE} yScale={INFER_YS} opacity={hills * 0.75} />
 			<Hill id="s4a" f={(u) => gauss(u, uA, OBS.sA)} color={C.sound} baseY={INFER_BASE} yScale={INFER_YS} opacity={hills * 0.75} />
 			<Hill id="s4b" f={ci.posteriorA} color={C.belief} baseY={INFER_BASE} yScale={INFER_YS} opacity={hills} fill={0.45} stroke={6} u0={-14} u1={34} />
+			{bets > 0.001 && <Bets ci={ci} opacity={bets} labels={bets} id="s4" />}
 			<Label x={fieldX(0) - 64} y={vTop + 6} text="sight" color={C.sight} size={32} opacity={hills} anchor="end" />
 			<Label x={fieldX(uA) + 70} y={aTop + 4} text="sound" color={C.sound} size={32} opacity={hills} anchor="start" />
 			<Label x={fieldX(peakU)} y={INFER_BASE - peakV * INFER_YS - 26} text="your guess" color={C.belief} size={34} opacity={hills} />

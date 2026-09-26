@@ -128,6 +128,7 @@ export const S8End: React.FC<SceneProps> = ({standalone}) => {
 	const peek = ease(f, g0 + 172, g0 + 178);
 	const peekBlink = f >= g0 + 186 && f < g0 + 190;
 	const card = ease(f, g0 + 206, g0 + 218);
+	const more = ease(f, g0 + 226, g0 + 238);
 
 	return (
 		<SceneShell sceneId="end" standalone={standalone}>
@@ -263,22 +264,31 @@ export const S8End: React.FC<SceneProps> = ({standalone}) => {
 			{card > 0 && (
 				<g opacity={card}>
 					<rect x={0} y={0} width={1920} height={1080} fill="#05081A" />
-					<text x={960} y={430} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={120} fill={C.text}>
+					<text x={960} y={300} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={120} fill={C.text}>
 						One cause or two?
 					</text>
-					<path d={ridge(10, 520, 900, -30, 30)} stroke={C.belief} strokeWidth={5} fill="none" opacity={0.9} strokeDasharray="1400" strokeDashoffset={1400 * (1 - ease(f, g0 + 210, g0 + 236))} />
-					<text x={960} y={630} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={40} fill={C.text}>
+					<path d={ridge(10, 390, 900, -30, 30)} stroke={C.belief} strokeWidth={5} fill="none" opacity={0.9} strokeDasharray="1400" strokeDashoffset={1400 * (1 - ease(f, g0 + 210, g0 + 236))} />
+					<text x={960} y={490} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={40} fill={C.text}>
 						Liu, Holland, Ma &amp; Acerbi (2026)
 					</text>
-					<text x={960} y={684} textAnchor="middle" fontFamily={FONT} fontWeight={600} fontStyle="italic" fontSize={30} fill={C.dim}>
+					<text x={960} y={544} textAnchor="middle" fontFamily={FONT} fontWeight={600} fontStyle="italic" fontSize={32} fill={C.dim}>
 						Distilling noise characteristics and prior expectations in multisensory causal inference
 					</text>
-					<text x={960} y={736} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim}>
-						PLOS Computational Biology
+					<text x={960} y={596} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim}>
+						PLOS Computational Biology ·{' '}
+						<tspan fontFamily={MONO} fontWeight={400}>
+							doi.org/10.1371/journal.pcbi.1014251
+						</tspan>
 					</text>
-					<text x={960} y={800} textAnchor="middle" fontFamily={MONO} fontWeight={400} fontSize={28} fill={C.belief}>
-						doi.org/10.1371/journal.pcbi.1014251
-					</text>
+					{/* the landing page, then the institutions behind the study */}
+					<g opacity={more}>
+						<text x={960} y={770} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={64} fill={C.belief}>
+							acerbilab.github.io/one-cause-or-two
+						</text>
+						<text x={960} y={910} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim}>
+							University of Helsinki · New York University · Research Council of Finland · ELLIS Institute Finland
+						</text>
+					</g>
 				</g>
 			)}
 

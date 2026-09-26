@@ -369,7 +369,7 @@
    "id": "end",
    "title": "Resolution",
    "from": 3621,
-   "duration": 574,
+   "duration": 634,
    "lines": [
     {
      "id": "r1",
@@ -639,5 +639,5 @@
    "duration": 79
   }
  ],
- "totalFrames": 4195
+ "totalFrames": 4255
 }

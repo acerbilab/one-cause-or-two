@@ -8,7 +8,7 @@ inference* (Liu, Holland, Ma & Acerbi, PLOS Computational Biology, 2026).
 No prior knowledge of statistics or neuroscience is assumed; every idea is carried by a
 picture first and by words second.
 
-**Format.** 1920×1080, 30 fps, 139.8 s.
+**Format.** 1920×1080, 30 fps, 141.8 s.
 Narration by a local text-to-speech voice (Kokoro, `af_heart`). Burned-in captions in
 the main render (most feeds autoplay muted), a clean render without captions, and an
 `.srt` file.
@@ -111,7 +111,7 @@ the two (the precision-weighted average).
 | i3 | A leading theory, the Bayesian brain, says we weigh the odds. | Subtitle: *the Bayesian brain: weigh the odds*. The beam wobbles. Small mono easter egg: Bayes' rule for the one-cause hypothesis. |
 | i4 | Close together? Probably one cause: merge. | Hills below: sight at the centre, sound close by. The scale tips to *one cause* (85%); the amber *your guess* is one merged bump. |
 | i5 | Far apart? Probably two: keep them separate. | The sound slides far away: *two causes* (98%); the guess stays with the sound. |
-| i6 | In between? You hedge your bets. | The sound comes back halfway: the scale nearly balances (44% / 56%) and the guess splits into two bumps. |
+| i6 | In between? You hedge your bets. | The sound comes back halfway: the scale nearly balances (44% / 56%) and the guess splits into two bumps. Under the amber curve, faint dashed bumps show the two bets it mixes, each weighted by its odds: *merge* and *separate*. They fade in the first frames of the next scene. |
 
 The tilt, the percentages and the amber curve are computed live from the standard
 Bayesian causal-inference observer (Körding et al., 2007): the amber curve is the
@@ -149,14 +149,14 @@ causes" answers weighted by their probabilities.
 The pins sit at the study's pivot locations (0°, 0.1°, 0.3°, 1°, 2°, 4°, 6°, 8°, 10°,
 15°, 20°, mirrored; the 45° pivot lies outside the picture).
 
-### 8. Resolution — 2:00–2:20
+### 8. Resolution — 2:00–2:22
 
 | Line | Narration | Picture |
 |---|---|---|
 | r1 | Every moment, your brain is betting on what goes with what. | The prior curve rises and fills into the central mountain, a snowy peak with a lit and a shaded face; dawn comes up behind it (gold horizon) and the meadow rises into view, the marmot back on her boulder with a new flower, rim-lit by the sunrise. |
 | r2 | One cause, or two? Now we know a little more about how it decides. | Calm wide shot; the sun clears the ridge. |
 | — | *(no narration)* | A flicker and a rustle from the same spot. Above it, a blue and a green hill merge into one amber hill: one cause. A big bubble: a fox and "!". She whistles the alarm and dives into the burrow (dust puff). A fox leaps onto the empty boulder, looks around, turns to us, ears drooping; soft *womp womp*. |
-| — | *(end card)* | The iris closes on the fox, then slides down to the burrow, where the marmot's eyes peek out and blink; it closes. **One cause or two?** over a drawn-on amber prior curve. Liu, Holland, Ma & Acerbi (2026) · *Distilling noise characteristics and prior expectations in multisensory causal inference* · PLOS Computational Biology · doi.org/10.1371/journal.pcbi.1014251 |
+| — | *(end card)* | The iris closes on the fox, then slides down to the burrow, where the marmot's eyes peek out and blink; it closes. **One cause or two?** over a drawn-on amber prior curve. Liu, Holland, Ma & Acerbi (2026) · *Distilling noise characteristics and prior expectations in multisensory causal inference* · PLOS Computational Biology · doi.org/10.1371/journal.pcbi.1014251. Then, large and amber, the landing page **acerbilab.github.io/one-cause-or-two**, and one line: University of Helsinki · New York University · Research Council of Finland · ELLIS Institute Finland. No logos. |
 
 ## Build pipeline
 

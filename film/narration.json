@@ -97,7 +97,7 @@
       "id": "end",
       "title": "Resolution",
       "lead": 0.9,
-      "tail": 10.9,
+      "tail": 12.9,
       "lines": [
         { "id": "r1", "text": "Every moment, your brain is betting on what goes with what." },
         { "id": "r2", "text": "One cause, or two? Now we know a little more about how it decides.", "gap": 0.6 }

@@ -9,7 +9,7 @@ import {cues} from '../lib/timeline';
 import {ease, lerp, spr} from '../lib/anim';
 import {causalInference, gauss} from '../lib/math';
 import {C, FONT, MATH} from '../theme';
-import {INFER_BASE, INFER_YS, OBS, tiltFor, U_MID} from './S4Infer';
+import {Bets, INFER_BASE, INFER_YS, OBS, tiltFor, U_MID} from './S4Infer';
 
 const T = cues('ingredients');
 
@@ -78,6 +78,7 @@ export const S5Ingredients: React.FC<SceneProps> = ({standalone}) => {
 				<Hill id="s5v" f={(u) => gauss(u, 0, OBS.sV)} color={C.sight} baseY={INFER_BASE} yScale={INFER_YS} opacity={0.75} />
 				<Hill id="s5a" f={(u) => gauss(u, U_MID, OBS.sA)} color={C.sound} baseY={INFER_BASE} yScale={INFER_YS} opacity={0.75} />
 				<Hill id="s5b" f={ci.posteriorA} color={C.belief} baseY={INFER_BASE} yScale={INFER_YS} fill={0.45} stroke={6} u0={-14} u1={34} />
+				{f < 14 && <Bets ci={ci} opacity={1 - ease(f, 0, 14)} labels={1 - ease(f, 0, 10)} id="s5" />}
 				<g opacity={1 - ease(f, 0, 14)}>
 					<text x={960} y={112} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={76} fill={C.text} letterSpacing={2}>
 						causal inference

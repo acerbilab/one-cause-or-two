@@ -60,7 +60,7 @@ e1014251, transcribed in [acerbilab/pubs-llms](https://github.com/acerbilab/pubs
   to "wrestle". The take used is the one of eight that Whisper heard as
   "rustle/Russell", and it is locked with `"keep": true` in `narration.json`.
 - **Upload limits:** check each platform's current limits for length and format. The film
-  is 2:19.8, in 16:9; vertical platforms (Reels, TikTok, Shorts) would need a 9:16
+  is 2:21.8, in 16:9; vertical platforms (Reels, TikTok, Shorts) would need a 9:16
   re-layout.
 - **Voice:** `af_heart` (Kokoro, Apache-2.0). Samples of other voices are in
   `out/voice-samples/`. To switch voices:
