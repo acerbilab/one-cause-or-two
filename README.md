@@ -6,7 +6,7 @@ in multisensory causal inference* (Liu, Holland, Ma & Acerbi, PLOS Computational
 Biology, 2026, [doi:10.1371/journal.pcbi.1014251](https://doi.org/10.1371/journal.pcbi.1014251)).
 
 **Watch it** on [YouTube](https://www.youtube.com/watch?v=Je3AaCCAd54) or on
-[its landing page](https://acerbilab.github.io/one-cause-or-two/), which also has an
+[its landing page](https://acerbilab.org/one-cause-or-two/), which also has an
 interactive version of the brain's decision and the study's findings.
 
 | Folder | Contents |

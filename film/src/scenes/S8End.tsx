@@ -283,7 +283,7 @@ export const S8End: React.FC<SceneProps> = ({standalone}) => {
 					{/* the landing page, then the institutions behind the study */}
 					<g opacity={more}>
 						<text x={960} y={770} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={64} fill={C.belief}>
-							acerbilab.github.io/one-cause-or-two
+							acerbilab.org/one-cause-or-two
 						</text>
 						{/* the institutions: the senior authors' first, where the study was led; then funding and research environment */}
 						<text x={960} y={890} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={32} fill={C.dim}>
