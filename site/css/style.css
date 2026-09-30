@@ -465,7 +465,7 @@ cite {
 	color: var(--dim);
 	text-wrap: pretty;
 }
-.band p:not(.lead):not(.eyebrow):not(.kicker):not(.small):not(.ref):not(.links) {
+.band p:not(.lead):not(.eyebrow):not(.kicker):not(.small):not(.ref) {
 	max-width: 46em;
 }
 .sub {
@@ -516,14 +516,6 @@ cite {
 }
 .ref a {
 	color: var(--dim);
-}
-.links {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 6px 16px;
-	margin: 0.8em 0 0;
-	font-weight: 800;
-	font-size: 0.92em;
 }
 
 /* ─── demo ─── */
@@ -776,6 +768,13 @@ input[type='range'] {
 .start .kicker {
 	color: var(--belief);
 }
+.hub {
+	border-color: rgba(195, 155, 255, 0.5);
+	background: linear-gradient(120deg, rgba(195, 155, 255, 0.13), rgba(26, 35, 86, 0.42) 60%);
+}
+.hub .kicker {
+	color: var(--prior);
+}
 .start-actions {
 	display: flex;
 	flex-wrap: wrap;
@@ -788,8 +787,7 @@ input[type='range'] {
 .tool > p:nth-of-type(2) {
 	flex: 1;
 }
-.tool p,
-.next p {
+.tool p {
 	font-size: 0.95em;
 }
 .install {
@@ -804,10 +802,6 @@ input[type='range'] {
 	color: var(--text);
 	overflow-x: auto;
 	white-space: nowrap;
-}
-.next {
-	border-style: dashed;
-	border-color: rgba(255, 181, 71, 0.4);
 }
 .research {
 	color: var(--dim);

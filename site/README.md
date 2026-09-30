@@ -1,7 +1,7 @@
 # The landing page
 
 A single static page, with no framework and no build step, in the film's visual style.
-It will be published with GitHub Pages at <https://acerbilab.org/one-cause-or-two/>.
+It is published with GitHub Pages at <https://acerbilab.org/one-cause-or-two/>.
 
 | Path | Contents |
 |---|---|
