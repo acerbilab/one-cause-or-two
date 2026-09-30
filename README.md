@@ -5,7 +5,7 @@ same thing, and about the study *Distilling noise characteristics and prior expe
 in multisensory causal inference* (Liu, Holland, Ma & Acerbi, PLOS Computational
 Biology, 2026, [doi:10.1371/journal.pcbi.1014251](https://doi.org/10.1371/journal.pcbi.1014251)).
 
-**Watch it** on [YouTube](https://www.youtube.com/watch?v=Je3AaCCAd54) or on
+**Watch it** on [YouTube](https://www.youtube.com/watch?v=89dVc2eZHnY) or on
 [its landing page](https://acerbilab.org/one-cause-or-two/), which also has an
 interactive version of the brain's decision and the study's findings.
 
