@@ -28,10 +28,10 @@ first.
 | `film/narration.json` | Words, pauses and voice; the single source of truth for timing |
 | `film/STORYBOARD.md` | The film scene by scene: narration, pictures, transitions |
 | `film/NOTES.md` | Source for every claim, simplifications, checks before posting |
-| `film/tts/` | `make_voice.py` (narration and timeline), `verify_voice.py` (Whisper check), `make_audio.py` (effects, ambience, score) |
+| `film/tts/` | `make_voice.py` (narration and timeline), `verify_voice.py` (Whisper check), `make_audio.py` (effects, ambience, score), `takes/` (the ElevenLabs scene takes) |
 | `film/src/` | `Film.tsx` (master composition), `scenes/` (one component per scene), `components/`, `lib/` (timeline access, animation helpers, maths) |
 | `film/scripts/` | `stills.mjs` (review stills), `master.mjs` (loudness normalisation of a render) |
-| `film/public/voice/`, `film/public/sfx/` | Generated audio |
+| `film/public/voice/`, `film/public/sfx/` | Generated audio: the narration clips, and the effects and score (ignored, except the TV anchor's line) |
 | `film/out/` | Renders, stills, review sheets (ignored) |
 | `site/` | The landing page: static HTML, CSS and JS, no build step (`site/README.md`) |
 | `site/media/` | The film and its captions for local preview (ignored; deployed from a release) |
@@ -91,9 +91,14 @@ Compositions: `Film` (the whole film; props `captions`, `music`), and `S1-cold` 
 - **Text-to-speech needs checking.** Run `verify_voice.py` after re-voicing. It transcribes
   each line on its own, so Whisper mishears some short lines that are fine in context
   ("Ears" as "is", "hedge" as "head"); if in doubt, transcribe the uncut scene take.
-- **The audio in `film/public/` is generated.**
-  - Without it (for example in a fresh clone), run `make_voice.py`, `verify_voice.py` and
-    `make_audio.py` before rendering. Renders skip missing sounds silently.
+- **The audio in `film/public/` is generated; the parts that cannot be regenerated are
+  committed.**
+  - The scene takes (`tts/takes/`) and the TV anchor's line (`public/sfx/tv_evening.wav`)
+    would come out different if generated again. The narration clips (`public/voice/`) are
+    committed too, but `make_voice.py` re-cuts them identically from the takes, without
+    calling ElevenLabs, while a scene's text is unchanged.
+  - The rest of `public/sfx/` is ignored: in a fresh clone, run `make_audio.py` before
+    rendering. Renders skip missing sounds silently.
   - New narration takes change the line durations, so the film re-times itself and
     `src/generated/timeline.json` changes with them.
 - **Scenes hand off continuously.**
@@ -180,7 +185,9 @@ up to 20 parameters, and CMA-ES the 40-parameter semiparametric fits.
 - **`make_audio.py` is regenerable, but not bit-identically.**
   - All its jobs draw from one seeded random generator, so running a subset with `--only`
     gives different random details than a full run.
-  - The TV anchor's line comes from Kokoro, which is not deterministic.
+  - The TV anchor's line comes from Kokoro, which is not deterministic. A full run
+    overwrites the committed take; `git checkout film/public/sfx/tv_evening.wav` restores
+    it.
 - **Remotion API** (version 4.0.529):
   - use `Html5Audio` (`Audio` is deprecated) and `trimBefore` (`startFrom` is
     deprecated);

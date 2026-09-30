@@ -35,6 +35,10 @@ python -m venv tts/.venv
 tts/.venv/Scripts/python -m pip install "kokoro>=0.9.4" soundfile faster-whisper scipy
 ```
 
+The narration clips, the scene takes they are cut from, and the TV anchor's line are
+committed, because text-to-speech comes out different every time. A fresh clone needs only
+step 3 before rendering; steps 1 and 2 are for changing the narration.
+
 The pipeline, in order:
 
 ```sh
@@ -55,7 +59,8 @@ npm run render:clean
 scene lasts `lead + Σ(gap + spoken line) + tail`, so editing a line or changing the
 voice re-times the whole film. With the ElevenLabs engine, each scene is one take, saved
 in `tts/takes/` and reused while its text is unchanged; `--only <scene>` takes it again.
-It needs an ElevenLabs API key in `ELEVENLABS_API_KEY` or `~/.config/elevenlabs/api_key`.
+A new take needs an ElevenLabs API key in `ELEVENLABS_API_KEY` or
+`~/.config/elevenlabs/api_key`.
 
 `npm run studio` opens Remotion Studio for scrubbing through the film. Each scene is also
 its own composition (`S1-cold` … `S8-end`) with captions, for previews and stills.
@@ -69,7 +74,8 @@ src/Film.tsx            the master composition: scenes, music ducking, ambience,
 src/scenes/             one component per scene
 src/components/         characters, meadow, diagrams, lab, TV room
 src/lib/                timeline access, animation helpers, the Bayesian observer
-public/voice, public/sfx  generated audio
+public/voice            narration clips, cut from the scene takes in tts/takes/
+public/sfx              effects, ambience and score (ignored, except the TV anchor's line)
 scripts/stills.mjs      renders review stills from a single bundle
 scripts/master.mjs      two-pass loudness normalisation of a rendered film (video copied)
 ```
